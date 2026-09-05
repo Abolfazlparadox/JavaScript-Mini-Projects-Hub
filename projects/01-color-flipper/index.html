@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChromaCraft Studio | Advanced Color & Gradient Flipper</title>
+    <meta
+      name="description"
+      content="A creative, interactive color and gradient studio featuring solid colors, gradients, aesthetic palettes, WCAG contrast checking, and instant CSS export."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="mode-solid" data-theme="dark">
+    <!-- Top Navigation Dock -->
+    <header class="studio-header">
+      <div class="header-left">
+        <a href="../../index.html" class="nav-hub-btn" title="Return to Projects Hub" id="backToHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Hub</span>
+        </a>
+        <div class="brand">
+          <span class="brand-badge">#01</span>
+          <span class="brand-title">ChromaCraft</span>
+        </div>
+      </div>
+
+      <!-- Mode Selector Tabs -->
+      <nav class="mode-tabs" role="tablist" aria-label="Color Modes">
+        <button class="tab-btn active" data-mode="solid" role="tab" aria-selected="true" id="tabSolid">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+          </svg>
+          <span>Solid</span>
+        </button>
+        <button class="tab-btn" data-mode="gradient" role="tab" aria-selected="false" id="tabGradient">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 8L8 16"></path>
+          </svg>
+          <span>Gradient</span>
+        </button>
+        <button class="tab-btn" data-mode="palette" role="tab" aria-selected="false" id="tabPalette">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c3.31 0 6-2.69 6-6 0-4.96-4.49-9-10-9z"></path>
+          </svg>
+          <span>Palettes</span>
+        </button>
+      </nav>
+
+      <!-- Utilities (Sound, Favorites, Shortcuts) -->
+      <div class="header-right">
+        <button class="icon-action-btn" id="soundToggleBtn" aria-label="Toggle Sound" title="Sound Effects (M)">
+          <svg id="soundIconOn" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <svg id="soundIconOff" class="hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="1" y1="1" x2="23" y2="23"></line>
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+        </button>
+        <button class="icon-action-btn" id="favoritesToggleBtn" aria-label="Open Saved Colors" title="Favorites">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="fav-count-badge" id="favCount">0</span>
+        </button>
+        <button class="icon-action-btn" id="shortcutsBtn" aria-label="Keyboard Shortcuts" title="Keyboard Shortcuts (?)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+            <path d="M6 8h.001M10 8h.001M14 8h.001M18 8h.001M8 12h.001M12 12h.001M16 12h.001M7 16h10"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Stage Container -->
+    <main class="studio-stage" id="mainStage">
+      <!-- Dynamic Center Studio Card -->
+      <section class="glass-studio-card" id="studioCard">
+        <!-- Card Header Badge -->
+        <div class="card-meta-bar">
+          <span class="type-indicator" id="colorTypeBadge">HEX COLOR</span>
+          <div class="contrast-badge" id="contrastBadge" title="Calculated WCAG Relative Contrast">
+            <span class="contrast-dot"></span>
+            <span id="contrastText">WCAG AAA • Contrast 9.2:1</span>
+          </div>
+        </div>
+
+        <!-- Central Color Value Display -->
+        <div class="hero-color-block">
+          <button class="display-code-wrapper" id="copyHeroCodeBtn" title="Click to copy HEX code">
+            <h1 class="primary-color-code" id="primaryColorText">#6366F1</h1>
+            <span class="quick-copy-hint">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span>Copy</span>
+            </span>
+          </button>
+        </div>
+
+        <!-- Format Badges & Values -->
+        <div class="code-formats-grid" id="codeFormatsGrid">
+          <div class="format-pill" data-copy="hex" title="Copy HEX">
+            <span class="fmt-label">HEX</span>
+            <span class="fmt-value" id="valHex">#6366F1</span>
+          </div>
+          <div class="format-pill" data-copy="rgb" title="Copy RGB">
+            <span class="fmt-label">RGB</span>
+            <span class="fmt-value" id="valRgb">rgb(99, 102, 241)</span>
+          </div>
+          <div class="format-pill" data-copy="hsl" title="Copy HSL">
+            <span class="fmt-label">HSL</span>
+            <span class="fmt-value" id="valHsl">hsl(239, 84%, 67%)</span>
+          </div>
+        </div>
+
+        <!-- Gradient Controls Panel (Visible in Gradient Mode) -->
+        <div class="gradient-controls-panel hidden" id="gradientControls">
+          <div class="control-row">
+            <div class="slider-group">
+              <label for="gradientAngle">Angle: <strong id="angleLabel">135°</strong></label>
+              <input type="range" id="gradientAngle" min="0" max="360" value="135" class="custom-range" />
+            </div>
+            <div class="grad-type-toggle">
+              <button class="sub-btn active" id="btnLinearGrad">Linear</button>
+              <button class="sub-btn" id="btnRadialGrad">Radial</button>
+            </div>
+          </div>
+          <div class="gradient-stops-preview" id="gradientStopsList"></div>
+        </div>
+
+        <!-- Palette Preview Bars (Visible in Palette Mode) -->
+        <div class="palette-swatches-panel hidden" id="palettePanel">
+          <div class="palette-preset-selector">
+            <label for="presetSelect">Preset Theme:</label>
+            <select id="presetSelect" class="custom-select">
+              <option value="harmony-analogous">Harmonious Analogous</option>
+              <option value="harmony-complementary">Vibrant Complementary</option>
+              <option value="harmony-triadic">Balanced Triadic</option>
+              <option value="cyberpunk">Cyberpunk Neon</option>
+              <option value="sunset">Midnight Sunset</option>
+              <option value="pastel">Pastel Dream</option>
+              <option value="emerald">Emerald Forest</option>
+              <option value="terracotta">Warm Terracotta</option>
+            </select>
+          </div>
+          <div class="palette-strips-container" id="paletteStrips"></div>
+        </div>
+
+        <!-- Primary Action Center -->
+        <div class="action-buttons-group">
+          <button class="btn-flip-hero" id="btnFlip">
+            <svg class="sparkle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6l2.1 2.1M5.6 18.4l2.1-2.1m8.6-8.6l2.1-2.1"></path>
+            </svg>
+            <span class="btn-text" id="btnFlipText">Flip Color</span>
+            <kbd class="key-hint">Space</kbd>
+          </button>
+
+          <div class="secondary-actions">
+            <button class="btn-secondary" id="btnCopyCss" title="Copy full CSS snippet">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+              <span>Copy CSS</span>
+            </button>
+            <button class="btn-secondary" id="btnSaveFavorite" title="Save to Favorites">
+              <svg id="favStarIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <span>Save</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recent History Deck -->
+      <footer class="history-dock">
+        <div class="history-dock-inner">
+          <span class="history-label">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span>History:</span>
+          </span>
+          <div class="history-chips" id="historyChips">
+            <!-- Dynamically populated chips -->
+          </div>
+          <button class="btn-clear-history" id="btnClearHistory" title="Clear History">Clear</button>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Favorites Drawer / Modal -->
+    <div class="modal-overlay hidden" id="favModal">
+      <div class="modal-window glass-card">
+        <div class="modal-header">
+          <h3>Saved Colors & Gradients</h3>
+          <button class="btn-close-modal" id="btnCloseFav">✕</button>
+        </div>
+        <div class="modal-body" id="favListContainer">
+          <p class="empty-msg" id="favEmptyMsg">No saved favorites yet. Click "Save" on any color you like!</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-secondary" id="btnClearFavorites">Clear All</button>
+          <button class="btn-primary-small" id="btnCloseFav2">Done</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shortcuts Modal -->
+    <div class="modal-overlay hidden" id="shortcutsModal">
+      <div class="modal-window glass-card">
+        <div class="modal-header">
+          <h3>Keyboard Shortcuts</h3>
+          <button class="btn-close-modal" id="btnCloseShortcuts">✕</button>
+        </div>
+        <div class="modal-body">
+          <ul class="shortcuts-list">
+            <li>
+              <span>Generate new color / gradient</span>
+              <kbd>Space</kbd>
+            </li>
+            <li>
+              <span>Copy primary color code</span>
+              <kbd>C</kbd>
+            </li>
+            <li>
+              <span>Switch to Solid mode</span>
+              <kbd>1</kbd> or <kbd>S</kbd>
+            </li>
+            <li>
+              <span>Switch to Gradient mode</span>
+              <kbd>2</kbd> or <kbd>G</kbd>
+            </li>
+            <li>
+              <span>Switch to Palettes mode</span>
+              <kbd>3</kbd> or <kbd>P</kbd>
+            </li>
+            <li>
+              <span>Toggle sound feedback</span>
+              <kbd>M</kbd>
+            </li>
+            <li>
+              <span>Save current color to favorites</span>
+              <kbd>F</kbd>
+            </li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-primary-small" id="btnCloseShortcuts2">Got it</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notification Banner -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+  </body>
+</html>

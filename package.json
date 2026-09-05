@@ -1,0 +1,29 @@
+{
+  "name": "javascript-mini-projects-hub",
+  "version": "1.0.0",
+  "description": "Curated collection of modern, responsive Vanilla JavaScript mini-applications with live preview portal and modular architecture.",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abolfazlparadox/color-flipper.git"
+  },
+  "keywords": [
+    "vanilla-javascript",
+    "javascript-projects",
+    "dom-manipulation",
+    "color-flipper",
+    "web-development",
+    "frontend-showcase",
+    "wcag-accessibility"
+  ],
+  "author": "Abolfazl Mohammadshahi <abolfazlmohammadshahi78@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Abolfazlparadox/color-flipper/issues"
+  },
+  "homepage": "https://github.com/Abolfazlparadox/color-flipper#readme"
+}

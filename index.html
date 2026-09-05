@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Mini Projects Hub | Vanilla JS Apps Showcase</title>
+    <meta
+      name="description"
+      content="A curated collection of modern, responsive, and accessible Vanilla JavaScript mini-applications with a live preview dashboard, clean code architecture, and zero dependencies."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="hub.css" />
+  </head>
+  <body>
+    <!-- Background Ambient Glow -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+
+    <!-- Header Navigation -->
+    <header class="hub-header">
+      <div class="header-container">
+        <div class="hub-brand">
+          <div class="brand-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">JS Projects Hub</span>
+            <span class="brand-tag">Vanilla ES6+</span>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme" title="Toggle Theme (T)">
+            <svg id="themeIconSun" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg id="themeIconMoon" class="hidden" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+
+          <button class="guide-trigger-btn" id="guideBtn" title="How to Add Projects">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            <span>Add Project</span>
+          </button>
+
+          <a
+            href="https://github.com/Abolfazlparadox/color-flipper"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="github-link-btn"
+            title="View on GitHub"
+          >
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+            </svg>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="hub-main">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          <span>Open-Source Monorepo Showcase</span>
+        </div>
+        <h1 class="hero-title">
+          Vanilla JavaScript <span class="gradient-text">Projects Suite</span>
+        </h1>
+        <p class="hero-description">
+          A modern showcase of focused, modular mini-applications built with pure JavaScript (ES6+), clean semantic HTML5, and responsive CSS. Zero heavy dependencies, 100% native web APIs.
+        </p>
+
+        <!-- Quick Stats Grid -->
+        <div class="stats-ribbon">
+          <div class="stat-card">
+            <span class="stat-number" id="statTotalProjects">10</span>
+            <span class="stat-label">Projects Registered</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">0</span>
+            <span class="stat-label">External Frameworks</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Vanilla ES6+</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">AAA</span>
+            <span class="stat-label">WCAG Accessibility</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Search & Filters Toolbar -->
+      <section class="controls-toolbar">
+        <div class="search-box-wrapper">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="Search projects by title, tags, or concepts... (Ctrl + K)"
+            autocomplete="off"
+          />
+          <button class="clear-search-btn hidden" id="clearSearchBtn" title="Clear Search">✕</button>
+        </div>
+
+        <div class="filter-pills-row" id="categoryPills">
+          <button class="pill-btn active" data-filter="all">All Projects</button>
+          <button class="pill-btn" data-filter="active">🟢 Active / Live</button>
+          <button class="pill-btn" data-filter="DOM & Visuals">DOM & Visuals</button>
+          <button class="pill-btn" data-filter="UI Components">UI Components</button>
+          <button class="pill-btn" data-filter="State & Logic">State & Logic</button>
+          <button class="pill-btn" data-filter="Utilities & Tools">Utilities</button>
+        </div>
+      </section>
+
+      <!-- Projects Grid Section -->
+      <section class="projects-section">
+        <div class="section-meta-header">
+          <span class="results-count" id="resultsCount">Showing all projects</span>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+          <!-- Dynamically populated project cards -->
+        </div>
+
+        <!-- No Results Fallback -->
+        <div class="no-results hidden" id="noResultsBlock">
+          <span class="empty-icon">🔍</span>
+          <h3>No matching projects found</h3>
+          <p>Try searching with a different keyword or reset the category filters.</p>
+          <button class="btn-reset-filters" id="btnResetFilters">Reset Filters</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Live Preview Modal (In-Page Iframe) -->
+    <div class="preview-modal-overlay hidden" id="previewModal">
+      <div class="preview-modal-window">
+        <div class="preview-modal-header">
+          <div class="preview-modal-title">
+            <span class="preview-project-badge" id="previewBadge">#01</span>
+            <h3 id="previewTitle">Project Preview</h3>
+          </div>
+
+          <!-- Viewport Switchers -->
+          <div class="viewport-switchers">
+            <button class="vp-btn active" data-width="100%" title="Desktop View (100%)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </button>
+            <button class="vp-btn" data-width="768px" title="Tablet View (768px)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
+            </button>
+            <button class="vp-btn" data-width="375px" title="Mobile View (375px)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+
+          <div class="preview-modal-actions">
+            <button class="preview-action-btn" id="btnReloadPreview" title="Reload Preview">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="23 4 23 10 17 10"></polyline>
+                <polyline points="1 20 1 14 7 14"></polyline>
+                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+              </svg>
+            </button>
+            <a href="#" target="_blank" class="preview-action-btn" id="btnExternalLaunch" title="Open in New Tab">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+            <button class="preview-action-btn close-btn" id="btnClosePreview" title="Close (Esc)">✕</button>
+          </div>
+        </div>
+
+        <div class="preview-iframe-wrapper">
+          <iframe id="previewIframe" src="about:blank" title="Project Live Preview" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Project Guide Modal -->
+    <div class="modal-overlay hidden" id="guideModal">
+      <div class="guide-modal-window">
+        <div class="modal-header">
+          <h3>How to Add a New Mini Project</h3>
+          <button class="btn-close-modal" id="btnCloseGuide">✕</button>
+        </div>
+        <div class="modal-body">
+          <ol class="guide-steps">
+            <li>
+              <strong>Duplicate the template:</strong>
+              <p>Copy the pre-configured folder <code>projects/template/</code> to <code>projects/XX-your-project/</code> (e.g. <code>projects/02-counter/</code>).</p>
+            </li>
+            <li>
+              <strong>Implement your code:</strong>
+              <p>Write your semantic HTML in <code>index.html</code>, styling in <code>styles.css</code>, and logic in <code>app.js</code>.</p>
+            </li>
+            <li>
+              <strong>Register in <code>projects.json</code>:</strong>
+              <p>Add a new JSON object entry with <code>id</code>, <code>title</code>, <code>description</code>, <code>tags</code>, and <code>path</code>.</p>
+            </li>
+            <li>
+              <strong>Instant Hub Integration:</strong>
+              <p>Your new project will immediately appear on this dashboard with search, filtering, and live iframe previews!</p>
+            </li>
+          </ol>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-primary-small" id="btnCloseGuide2">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="hub-footer">
+      <div class="footer-container">
+        <div class="footer-left">
+          <p>
+            Built by <strong>Abolfazl Mohammadshahi</strong> • Senior Software Engineer
+          </p>
+          <p class="footer-sub">Open-source educational repository for JavaScript mastery.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/abolfazl-mohammadshahi-12b87b324" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/Abolfazlparadox" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="mailto:abolfazlmohammadshahi78@gmail.com">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Hub Scripts -->
+    <script src="hub.js"></script>
+  </body>
+</html>
