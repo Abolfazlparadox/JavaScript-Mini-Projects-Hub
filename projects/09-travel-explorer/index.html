@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wanderlust Explorer | Curated Travel Experiences</title>
+    <meta
+      name="description"
+      content="An immersive travel discovery portal with interactive destination filtering, seasonal expeditions, tour booking modal, and responsive navigation."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Sticky Navigation Header -->
+    <header class="travel-header" id="travelHeader">
+      <div class="header-container">
+        <div class="header-left">
+          <a href="../../index.html" class="nav-hub-btn" title="Return to Projects Hub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>Hub</span>
+          </a>
+          <div class="brand">
+            <span class="brand-badge">#09</span>
+            <span class="brand-title">Wanderlust</span>
+          </div>
+        </div>
+
+        <nav class="desktop-nav" id="desktopNav">
+          <a href="#destinations" class="nav-link">Destinations</a>
+          <a href="#seasons" class="nav-link">Seasons</a>
+          <a href="#about" class="nav-link">About</a>
+          <button class="btn-book-nav" id="btnOpenBookingNav">Book a Tour</button>
+        </nav>
+
+        <button class="mobile-menu-btn" id="btnMobileMenu" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <!-- Mobile Drawer -->
+      <div class="mobile-drawer hidden" id="mobileDrawer">
+        <a href="#destinations" class="drawer-link">Destinations</a>
+        <a href="#seasons" class="drawer-link">Seasons</a>
+        <a href="#about" class="drawer-link">About</a>
+        <button class="btn-primary" id="btnOpenBookingDrawer">Book a Tour</button>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <span class="hero-tagline">Curated Wilderness & Cultural Expeditions</span>
+        <h1 class="hero-headline">
+          Discover The World <br /><span class="highlight-text">Beyond Boundaries</span>
+        </h1>
+        <p class="hero-subtext">
+          Handcrafted adventure itineraries across untamed rainforests, alpine peaks, and timeless cultural landscapes.
+        </p>
+        <div class="hero-actions">
+          <a href="#destinations" class="btn-primary">Explore Expeditions</a>
+          <button class="btn-secondary" id="btnHeroBooking">Instant Reservation</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section class="section-container" id="destinations">
+      <div class="section-header">
+        <span class="section-subtitle">Featured Journeys</span>
+        <h2 class="section-title">Popular Destinations</h2>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="destination-filters" id="destFilters">
+        <button class="dest-filter-btn active" data-filter="all">All Journeys</button>
+        <button class="dest-filter-btn" data-filter="rainforest">Rainforest</button>
+        <button class="dest-filter-btn" data-filter="alpine">Alpine Peak</button>
+        <button class="dest-filter-btn" data-filter="coastal">Coastal</button>
+      </div>
+
+      <!-- Destinations Grid -->
+      <div class="destinations-grid" id="destGrid">
+        <!-- Card 1 -->
+        <article class="dest-card" data-category="rainforest">
+          <div class="dest-img-box">
+            <img src="assets/img/nat-1-large.jpg" alt="Amazonian Canopy" loading="lazy" />
+            <span class="price-badge">$1,450</span>
+          </div>
+          <div class="dest-card-body">
+            <span class="dest-category">Rainforest Trek</span>
+            <h3>Amazonian Canopy Trails</h3>
+            <p>7 Days of guided ecological trekking through pristine bio-diverse cloud forests.</p>
+            <div class="dest-card-footer">
+              <span class="rating">★★★★★ (4.9)</span>
+              <button class="btn-book-card" data-tour="Amazonian Canopy Trails">Book Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="dest-card" data-category="alpine">
+          <div class="dest-img-box">
+            <img src="assets/img/nat-2-large.jpg" alt="Nordic Fjord Expedition" loading="lazy" />
+            <span class="price-badge">$2,100</span>
+          </div>
+          <div class="dest-card-body">
+            <span class="dest-category">Alpine Ascent</span>
+            <h3>Nordic Glacier Expedition</h3>
+            <p>10 Days navigating glacial fjords, rugged granite summits, and northern lights.</p>
+            <div class="dest-card-footer">
+              <span class="rating">★★★★★ (5.0)</span>
+              <button class="btn-book-card" data-tour="Nordic Glacier Expedition">Book Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="dest-card" data-category="rainforest">
+          <div class="dest-img-box">
+            <img src="assets/img/nat-8.jpg" alt="Emerald Forest Sanctuary" loading="lazy" />
+            <span class="price-badge">$1,250</span>
+          </div>
+          <div class="dest-card-body">
+            <span class="dest-category">Rainforest Trek</span>
+            <h3>Emerald Forest Sanctuary</h3>
+            <p>Immersive nature photography expedition through ancient moss-draped redwood trails.</p>
+            <div class="dest-card-footer">
+              <span class="rating">★★★★★ (4.8)</span>
+              <button class="btn-book-card" data-tour="Emerald Forest Sanctuary">Book Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="dest-card" data-category="coastal">
+          <div class="dest-img-box">
+            <img src="assets/img/nat-9.jpg" alt="Mediterranean Coastline" loading="lazy" />
+            <span class="price-badge">$1,850</span>
+          </div>
+          <div class="dest-card-body">
+            <span class="dest-category">Coastal Voyage</span>
+            <h3>Mediterranean Odyssey</h3>
+            <p>Island hopping, hidden coves, turquoise lagoons, and authentic culinary heritage.</p>
+            <div class="dest-card-footer">
+              <span class="rating">★★★★★ (4.9)</span>
+              <button class="btn-book-card" data-tour="Mediterranean Odyssey">Book Now</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Seasons Section -->
+    <section class="section-container" id="seasons">
+      <div class="section-header">
+        <span class="section-subtitle">Year-Round Wonders</span>
+        <h2 class="section-title">Seasonal Escapes</h2>
+      </div>
+
+      <div class="seasons-grid">
+        <div class="season-card">
+          <img src="assets/img/sprin.jpg" alt="Spring Odyssey" />
+          <div class="season-overlay">
+            <h3>Spring Awakening</h3>
+            <p>Cherry blossoms & river valley rafting</p>
+          </div>
+        </div>
+        <div class="season-card">
+          <img src="assets/img/sumer.jpg" alt="Summer Trek" />
+          <div class="season-overlay">
+            <h3>Summer Highlands</h3>
+            <p>High alpine hiking under midnight sun</p>
+          </div>
+        </div>
+        <div class="season-card">
+          <img src="assets/img/winter.jpg" alt="Winter Escape" />
+          <div class="season-overlay">
+            <h3>Winter Wonderland</h3>
+            <p>Aurora tracking and cozy thermal spas</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div class="modal-overlay hidden" id="bookingModal">
+      <div class="booking-modal-window glass-card">
+        <div class="modal-header">
+          <h3>Reserve Your Expedition</h3>
+          <button class="btn-close-modal" id="btnCloseBooking">✕</button>
+        </div>
+        <form class="booking-form" id="bookingForm">
+          <div class="form-group">
+            <label for="tourSelect">Select Destination:</label>
+            <select id="tourSelect" class="custom-select" required>
+              <option value="Amazonian Canopy Trails">Amazonian Canopy Trails ($1,450)</option>
+              <option value="Nordic Glacier Expedition">Nordic Glacier Expedition ($2,100)</option>
+              <option value="Emerald Forest Sanctuary">Emerald Forest Sanctuary ($1,250)</option>
+              <option value="Mediterranean Odyssey">Mediterranean Odyssey ($1,850)</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="bookDate">Departure Date:</label>
+              <input type="date" id="bookDate" required />
+            </div>
+            <div class="form-group">
+              <label for="guestCount">Travelers:</label>
+              <input type="number" id="guestCount" min="1" max="10" value="2" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="leadName">Primary Traveler Name:</label>
+            <input type="text" id="leadName" placeholder="Full Name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="leadEmail">Contact Email:</label>
+            <input type="email" id="leadEmail" placeholder="you@example.com" required />
+          </div>
+
+          <button type="submit" class="btn-primary full-width">Confirm Reservation</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Toast Banner -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

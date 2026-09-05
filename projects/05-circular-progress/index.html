@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PulseGauge | Advanced Circular Progress Studio</title>
+    <meta
+      name="description"
+      content="Interactive circular progress and gauge studio featuring manual gauge control, Pomodoro focus timer, upload simulation, and custom gradient themes."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Top Navigation Dock -->
+    <header class="gauge-header">
+      <div class="header-left">
+        <a href="../../index.html" class="nav-hub-btn" title="Return to Projects Hub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Hub</span>
+        </a>
+        <div class="brand">
+          <span class="brand-badge">#05</span>
+          <span class="brand-title">PulseGauge Studio</span>
+        </div>
+      </div>
+
+      <!-- Mode Selector Tabs -->
+      <nav class="mode-tabs" role="tablist">
+        <button class="tab-btn active" data-mode="gauge">Manual Gauge</button>
+        <button class="tab-btn" data-mode="timer">Pomodoro Timer</button>
+        <button class="tab-btn" data-mode="upload">Upload Simulator</button>
+      </nav>
+    </header>
+
+    <!-- Main Workspace Stage -->
+    <main class="gauge-stage">
+      <div class="gauge-card glass-card">
+        <!-- SVG Gauge Center -->
+        <div class="gauge-display-container">
+          <svg class="gauge-svg" width="260" height="260" viewBox="0 0 260 260">
+            <defs>
+              <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#06b6d4" />
+                <stop offset="100%" stop-color="#3b82f6" />
+              </linearGradient>
+            </defs>
+            <!-- Background Track -->
+            <circle class="gauge-track" cx="130" cy="130" r="105" />
+            <!-- Animated Progress Bar -->
+            <circle class="gauge-progress" id="gaugeProgress" cx="130" cy="130" r="105" />
+          </svg>
+
+          <!-- Inside Center Information -->
+          <div class="gauge-center-content">
+            <span class="gauge-value" id="gaugeValue">0%</span>
+            <span class="gauge-status" id="gaugeStatus">Interactive</span>
+          </div>
+        </div>
+
+        <!-- Mode 1: Manual Gauge Controls -->
+        <div class="mode-panel" id="panelGauge">
+          <div class="control-slider-group">
+            <div class="slider-header">
+              <label for="valSlider">Progress Value:</label>
+              <strong id="sliderLabel">0%</strong>
+            </div>
+            <input type="range" id="valSlider" min="0" max="100" value="0" class="custom-range" />
+          </div>
+
+          <div class="presets-row">
+            <button class="preset-btn" data-val="25">25%</button>
+            <button class="preset-btn" data-val="50">50%</button>
+            <button class="preset-btn" data-val="75">75%</button>
+            <button class="preset-btn" data-val="100">100%</button>
+          </div>
+        </div>
+
+        <!-- Mode 2: Pomodoro Timer Controls -->
+        <div class="mode-panel hidden" id="panelTimer">
+          <div class="timer-duration-picker">
+            <button class="dur-btn active" data-mins="25">25 Min (Focus)</button>
+            <button class="dur-btn" data-mins="5">5 Min (Break)</button>
+            <button class="dur-btn" data-mins="15">15 Min (Long)</button>
+          </div>
+          <div class="action-buttons-row">
+            <button class="btn-primary" id="btnTimerStart">Start Focus</button>
+            <button class="btn-secondary" id="btnTimerReset">Reset</button>
+          </div>
+        </div>
+
+        <!-- Mode 3: Upload Simulator Controls -->
+        <div class="mode-panel hidden" id="panelUpload">
+          <div class="upload-stats-box">
+            <div class="upload-file-name">design_system_v2.fig (145 MB)</div>
+            <div class="upload-speed" id="uploadSpeedLabel">Ready to transfer</div>
+          </div>
+          <div class="action-buttons-row">
+            <button class="btn-primary" id="btnStartUpload">Simulate Upload</button>
+            <button class="btn-secondary" id="btnCancelUpload">Cancel</button>
+          </div>
+        </div>
+
+        <!-- Appearance Palette Options -->
+        <div class="theme-picker-row">
+          <span class="picker-label">Theme:</span>
+          <div class="color-options">
+            <button class="theme-dot active" data-theme="ocean" title="Ocean Breeze" style="background: linear-gradient(135deg, #06b6d4, #3b82f6);"></button>
+            <button class="theme-dot" data-theme="sunset" title="Sunset Fire" style="background: linear-gradient(135deg, #f59e0b, #ef4444);"></button>
+            <button class="theme-dot" data-theme="emerald" title="Emerald Luxe" style="background: linear-gradient(135deg, #10b981, #059669);"></button>
+            <button class="theme-dot" data-theme="cyber" title="Cyber Neon" style="background: linear-gradient(135deg, #ec4899, #8b5cf6);"></button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Toast -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CalcPro Studio | Modern Engineering Calculator</title>
+    <meta
+      name="description"
+      content="A sleek, accessible, and responsive glassmorphic calculator with history tape, memory functions, keyboard support, and safe mathematical evaluation."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Top Navigation Dock -->
+    <header class="calc-header">
+      <div class="header-left">
+        <a href="../../index.html" class="nav-hub-btn" title="Return to Projects Hub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Hub</span>
+        </a>
+        <div class="brand">
+          <span class="brand-badge">#02</span>
+          <span class="brand-title">CalcPro Studio</span>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <button class="icon-btn" id="soundToggleBtn" title="Toggle Sound Feedback (M)">
+          <svg id="soundIconOn" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <svg id="soundIconOff" class="hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="1" y1="1" x2="23" y2="23"></line>
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          </svg>
+        </button>
+        <button class="icon-btn" id="historyToggleBtn" title="Toggle History Tape (H)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="calc-stage">
+      <div class="calc-wrapper">
+        <!-- Calculator Machine Card -->
+        <section class="calc-machine glass-card">
+          <!-- Screen / Display Section -->
+          <div class="screen-box">
+            <div class="screen-meta">
+              <span class="memory-badge hidden" id="memoryIndicator">M</span>
+              <div class="expression-history" id="expressionHistory" title="Full calculation expression"></div>
+            </div>
+            <div class="primary-screen-row">
+              <span class="operator-badge" id="currentOperatorBadge"></span>
+              <div class="primary-screen" id="primaryScreen" tabindex="0">0</div>
+            </div>
+          </div>
+
+          <!-- Memory Bar -->
+          <div class="memory-bar">
+            <button class="mem-btn" data-mem="mc" title="Memory Clear">MC</button>
+            <button class="mem-btn" data-mem="mr" title="Memory Recall">MR</button>
+            <button class="mem-btn" data-mem="m+" title="Memory Add">M+</button>
+            <button class="mem-btn" data-mem="m-" title="Memory Subtract">M-</button>
+            <button class="mem-btn" data-action="copy" title="Copy Result">Copy</button>
+          </div>
+
+          <!-- Keypad Grid -->
+          <div class="keypad-grid">
+            <button class="key-btn key-action" data-action="clear" title="Clear All (Esc)">AC</button>
+            <button class="key-btn key-action" data-action="clear-entry" title="Clear Entry">CE</button>
+            <button class="key-btn key-action" data-action="backspace" title="Backspace (⌫)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path>
+                <line x1="18" y1="9" x2="12" y2="15"></line>
+                <line x1="12" y1="9" x2="18" y2="15"></line>
+              </svg>
+            </button>
+            <button class="key-btn key-op" data-op="/" title="Divide (/)">÷</button>
+
+            <button class="key-btn key-fn" data-fn="sqrt" title="Square Root (√)">√</button>
+            <button class="key-btn key-fn" data-fn="sq" title="Square (x²)">x²</button>
+            <button class="key-btn key-fn" data-fn="percent" title="Percent (%)">%</button>
+            <button class="key-btn key-op" data-op="*" title="Multiply (*)">×</button>
+
+            <button class="key-btn key-num" data-num="7">7</button>
+            <button class="key-btn key-num" data-num="8">8</button>
+            <button class="key-btn key-num" data-num="9">9</button>
+            <button class="key-btn key-op" data-op="-" title="Minus (-)">−</button>
+
+            <button class="key-btn key-num" data-num="4">4</button>
+            <button class="key-btn key-num" data-num="5">5</button>
+            <button class="key-btn key-num" data-num="6">6</button>
+            <button class="key-btn key-op" data-op="+" title="Plus (+)">+</button>
+
+            <button class="key-btn key-num" data-num="1">1</button>
+            <button class="key-btn key-num" data-num="2">2</button>
+            <button class="key-btn key-num" data-num="3">3</button>
+            <button class="key-btn key-equal" data-action="equal" title="Equals (= or Enter)">=</button>
+
+            <button class="key-btn key-fn" data-fn="negate" title="Positive / Negative">±</button>
+            <button class="key-btn key-num" data-num="0">0</button>
+            <button class="key-btn key-num" data-num=".">.</button>
+          </div>
+        </section>
+
+        <!-- History Tape Flyout / Drawer -->
+        <aside class="history-panel glass-card hidden" id="historyPanel">
+          <div class="history-panel-header">
+            <h3>Calculation Tape</h3>
+            <button class="btn-clear-tape" id="btnClearTape" title="Clear History">Clear</button>
+          </div>
+          <div class="history-tape-list" id="historyTapeList">
+            <p class="empty-tape-msg">No calculations yet. Calculations will appear here.</p>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!-- Toast Banner -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

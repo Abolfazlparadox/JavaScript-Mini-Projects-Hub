@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AuthCraft Portal | Modern Authentication Suite</title>
+    <meta
+      name="description"
+      content="A modern authentication portal featuring sliding tab forms, real-time validation, password strength meter, eye toggle, and mock session state."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Top Navigation Dock -->
+    <header class="auth-header">
+      <div class="header-left">
+        <a href="../../index.html" class="nav-hub-btn" title="Return to Projects Hub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Hub</span>
+        </a>
+        <div class="brand">
+          <span class="brand-badge">#07</span>
+          <span class="brand-title">AuthCraft Portal</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Workspace Stage -->
+    <main class="auth-stage">
+      <div class="auth-card glass-card">
+        <!-- Tab Selector Pills -->
+        <div class="auth-tabs" id="authTabs">
+          <button class="tab-btn active" data-target="signin">Sign In</button>
+          <button class="tab-btn" data-target="signup">Sign Up</button>
+          <button class="tab-btn" data-target="forgot">Recovery</button>
+        </div>
+
+        <!-- Forms Container -->
+        <div class="forms-wrapper">
+          <!-- Form 1: Sign In -->
+          <form class="auth-form" id="formSignIn">
+            <div class="form-header">
+              <h2>Welcome Back</h2>
+              <p>Enter your credentials to access your workspace</p>
+            </div>
+
+            <div class="input-field-group">
+              <label for="signinEmail">Email Address</label>
+              <input type="email" id="signinEmail" placeholder="you@example.com" required />
+            </div>
+
+            <div class="input-field-group">
+              <div class="label-row">
+                <label for="signinPass">Password</label>
+                <button type="button" class="forgot-link" id="linkToForgot">Forgot?</button>
+              </div>
+              <div class="password-input-wrapper">
+                <input type="password" id="signinPass" placeholder="••••••••" required />
+                <button type="button" class="toggle-eye-btn" data-input="signinPass" title="Toggle Visibility">👁️</button>
+              </div>
+            </div>
+
+            <div class="form-check-row">
+              <label class="custom-checkbox">
+                <input type="checkbox" id="rememberMe" checked />
+                <span class="checkbox-box"></span>
+                <span>Remember this device</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn-auth-submit">Sign In</button>
+          </form>
+
+          <!-- Form 2: Sign Up -->
+          <form class="auth-form hidden" id="formSignUp">
+            <div class="form-header">
+              <h2>Create Account</h2>
+              <p>Start your journey with full access to the suite</p>
+            </div>
+
+            <div class="input-field-group">
+              <label for="signupName">Full Name</label>
+              <input type="text" id="signupName" placeholder="Abolfazl Paradox" required />
+            </div>
+
+            <div class="input-field-group">
+              <label for="signupEmail">Email Address</label>
+              <input type="email" id="signupEmail" placeholder="you@example.com" required />
+            </div>
+
+            <div class="input-field-group">
+              <label for="signupPass">Password</label>
+              <div class="password-input-wrapper">
+                <input type="password" id="signupPass" placeholder="Min. 8 characters" required />
+                <button type="button" class="toggle-eye-btn" data-input="signupPass" title="Toggle Visibility">👁️</button>
+              </div>
+              <!-- Strength Meter -->
+              <div class="strength-meter">
+                <div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div>
+                <span class="strength-label" id="strengthLabel">Enter password</span>
+              </div>
+            </div>
+
+            <div class="input-field-group">
+              <label for="signupConfirmPass">Confirm Password</label>
+              <div class="password-input-wrapper">
+                <input type="password" id="signupConfirmPass" placeholder="Repeat password" required />
+              </div>
+              <span class="error-hint hidden" id="confirmError">Passwords do not match</span>
+            </div>
+
+            <button type="submit" class="btn-auth-submit">Create Account</button>
+          </form>
+
+          <!-- Form 3: Forgot Password -->
+          <form class="auth-form hidden" id="formForgot">
+            <div class="form-header">
+              <h2>Reset Password</h2>
+              <p>Enter your email and we'll simulate a magic reset link</p>
+            </div>
+
+            <div class="input-field-group">
+              <label for="forgotEmail">Email Address</label>
+              <input type="email" id="forgotEmail" placeholder="you@example.com" required />
+            </div>
+
+            <button type="submit" class="btn-auth-submit">Send Reset Instructions</button>
+
+            <button type="button" class="btn-back-to-login" id="linkBackToLogin">← Return to Sign In</button>
+          </form>
+
+          <!-- Authenticated State Card -->
+          <div class="profile-logged-box hidden" id="boxLoggedIn">
+            <div class="user-avatar-circle" id="userAvatar">A</div>
+            <h3 id="loggedInName">Abolfazl</h3>
+            <span class="user-email-badge" id="loggedInEmail">user@example.com</span>
+            <div class="auth-success-badge">Active Session Verified</div>
+            <button class="btn-logout" id="btnLogout">Sign Out</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Toast Banner -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
