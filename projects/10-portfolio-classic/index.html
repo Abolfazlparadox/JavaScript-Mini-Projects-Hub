@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paradox • Classic Noir Portfolio | Abolfazl Mohammadshahi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+</head>
+<body>
+    <!-- Top Hub Navigation -->
+    <header class="top-nav-bar">
+        <a href="../../index.html" class="hub-back-btn">
+            <i class='bx bx-arrow-back'></i> Paradox Hub
+        </a>
+        <div class="top-brand">
+            <span class="pulse-status"></span>
+            <span>Paradox • Classic Noir</span>
+        </div>
+        <div class="top-actions">
+            <a href="https://github.com/AbolfazlParadox" target="_blank" rel="noopener noreferrer" class="social-icon-top" title="GitHub">
+                <i class='bx bxl-github'></i>
+            </a>
+            <a href="mailto:abolfazlmohammadshahi78@gmail.com" class="social-icon-top" title="Email">
+                <i class='bx bx-envelope'></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Header -->
+    <section id="header">
+        <div class="container header-container">
+            <nav>
+                <div class="brand-logo">
+                    <span class="logo-accent">P</span>ARADOX<span class="logo-dot">.</span>
+                </div>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="close-menu-li"><i class='bx bx-x' onclick="closemenu()"></i></li>
+                </ul>
+                <i class='bx bx-menu mobile-menu-btn' onclick="openmenu()"></i>
+            </nav>
+
+            <div class="header-hero">
+                <div class="hero-badge">
+                    <i class='bx bx-shield-quarter'></i> Senior Software Engineer &amp; Python Specialist
+                </div>
+                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight-text">Abolfazl</span><br>
+                    <span class="alias-tag">Alias: Paradox</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Architecting high-concurrency <strong>Python &amp; Django</strong> platforms, 
+                    zero-defect test suites (190+ automated tests), and resilient PostgreSQL/Redis data pipelines.
+                </p>
+                <div class="hero-cta-group">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class='bx bx-paper-plane'></i> Get In Touch
+                    </a>
+                    <a href="#portfolio" class="btn btn-secondary">
+                        <i class='bx bx-folder'></i> View Projects
+                    </a>
+                </div>
+                <div class="hero-stats-strip">
+                    <div class="stat-pill">
+                        <span class="stat-num">2+</span>
+                        <span class="stat-lbl">Years Exp.</span>
+                    </div>
+                    <div class="stat-pill">
+                        <span class="stat-num">190+</span>
+                        <span class="stat-lbl">Automated Tests</span>
+                    </div>
+                    <div class="stat-pill">
+                        <span class="stat-num">48</span>
+                        <span class="stat-lbl">Live APIs</span>
+                    </div>
+                    <div class="stat-pill">
+                        <span class="stat-num">18.50</span>
+                        <span class="stat-lbl">M.Sc. GPA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row about-row">
+                <div class="about-col-1">
+                    <div class="portrait-card">
+                        <img src="assets/img/about-portrait.jpg" alt="Abolfazl Mohammadshahi (Paradox)" class="portrait-img">
+                        <div class="portrait-badge">
+                            <i class='bx bx-badge-check'></i> Verified Backend Architect
+                        </div>
+                    </div>
+                </div>
+                <div class="about-col-2">
+                    <div class="section-tag">About Me</div>
+                    <h2 class="sub-title">Engineering with Algorithmic Precision</h2>
+                    <p class="about-bio">
+                        Backend Engineer with 2+ years of production experience architecting high-concurrency Python &amp; Django platforms. 
+                        Specialized in PostgreSQL query optimization (zero N+1 queries), Redis/Celery asynchronous pipelines, zero-trust Server Authority, 
+                        and Docker/CI-CD deployments. M.Sc. candidate at K. N. Toosi University of Technology (GPA: 18.50) with research focus on Software Architecture and AI.
+                    </p>
+
+                    <div class="tab-titles">
+                        <button type="button" class="tab-links active-link" onclick="opentab('skills')">
+                            <i class='bx bx-code-alt'></i> Technical Skills
+                        </button>
+                        <button type="button" class="tab-links" onclick="opentab('experience')">
+                            <i class='bx bx-briefcase'></i> Work Experience
+                        </button>
+                        <button type="button" class="tab-links" onclick="opentab('education')">
+                            <i class='bx bx-graduation'></i> Education &amp; Certs
+                        </button>
+                    </div>
+
+                    <!-- Skills Tab -->
+                    <div class="tab-contents active-tab" id="skills">
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h3><i class='bx bxl-python'></i> Core Backend</h3>
+                                <p>Python, Django (Advanced), Django REST Framework (DRF), RESTful API Architecture, Modular Monoliths.</p>
+                            </div>
+                            <div class="skill-category">
+                                <h3><i class='bx bxl-postgresql'></i> Databases &amp; Caching</h3>
+                                <p>PostgreSQL (UUID PKs, ACID, Row-Level Locks), Query Optimization (Zero N+1), Redis (Caching &amp; Rate Limiting).</p>
+                            </div>
+                            <div class="skill-category">
+                                <h3><i class='bx bx-refresh'></i> Async &amp; Schedulers</h3>
+                                <p>Celery &amp; Celery Beat (Async Tasks, Schedulers), Server Authority, Idempotency Keys, WebSockets.</p>
+                            </div>
+                            <div class="skill-category">
+                                <h3><i class='bx bxl-docker'></i> DevOps &amp; Testing</h3>
+                                <p>Docker, CI/CD (GitHub Actions), Git Flow, Nginx, Gunicorn, Pytest (Factory-Boy), Vitest (190+ tests).</p>
+                            </div>
+                            <div class="skill-category">
+                                <h3><i class='bx bx-lock-alt'></i> Security &amp; Standards</h3>
+                                <p>Role-Based Access Control (RBAC), CSRF Protection, 2FA OTP, Swagger / OpenAPI, i18n (django-rosetta).</p>
+                            </div>
+                            <div class="skill-category">
+                                <h3><i class='bx bxl-react'></i> Cross-Team &amp; Frontend</h3>
+                                <p>Next.js 14 (App Router), TypeScript 5, TanStack Query, Zustand, Semantic HTML5 &amp; Modern CSS.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience Tab -->
+                    <div class="tab-contents" id="experience">
+                        <ul class="timeline-list">
+                            <li class="timeline-item">
+                                <div class="timeline-meta">2024 – Present • Remote / Contract</div>
+                                <h4>Freelance Backend Developer (Python / Django)</h4>
+                                <p>Architected &amp; deployed 3+ production Django/DRF services from scratch with zero-trust authentication. Eliminated N+1 queries using custom B-tree indexing and chained select_related. Engineered Celery/Redis background queues and WebSocket broadcast layers.</p>
+                            </li>
+                            <li class="timeline-item">
+                                <div class="timeline-meta">2022 – 2024 • Artar Media (Arta Rasaneh)</div>
+                                <h4>Web &amp; Django Developer</h4>
+                                <p>Decoupled legacy monolith into modular DRF services. Implemented granular RBAC across 50+ public and internal endpoints. Structured centralized Sentry logging schemas and led structured code reviews using Git Flow.</p>
+                            </li>
+                            <li class="timeline-item">
+                                <div class="timeline-meta">2018 – 2019 • Bank Melli Iran (Chamran Branch)</div>
+                                <h4>Technical &amp; IT Operations Assistant</h4>
+                                <p>Supported banking transactional systems and administrative automation alongside secondary schooling, establishing practical technical discipline and sparking computer engineering pursuit.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Education Tab -->
+                    <div class="tab-contents" id="education">
+                        <ul class="timeline-list">
+                            <li class="timeline-item">
+                                <div class="timeline-meta">2025 – Present • K. N. Toosi University of Technology (KNTU)</div>
+                                <h4>M.Sc. in Computer Engineering – Software Engineering</h4>
+                                <p><strong>GPA: 18.50 / 20.00</strong> • Research Focus: Software Architecture and Artificial Intelligence in Digital Health.</p>
+                            </li>
+                            <li class="timeline-item">
+                                <div class="timeline-meta">2021 – 2025 • K. N. Toosi University of Technology (KNTU)</div>
+                                <h4>B.Sc. in Computer Engineering</h4>
+                                <p><strong>GPA: 18.49 / 20.00</strong> • Core foundations: Software Architecture, Advanced Databases, Algorithms, Data Structures &amp; OOP.</p>
+                            </li>
+                            <li class="timeline-item">
+                                <div class="timeline-meta">Dec 2025 • Harvard University / CS50</div>
+                                <h4>CS50's Introduction to Programming with Python</h4>
+                                <p>Verified certificate mastering Python programming paradigms, algorithmic problem solving, and rigorous software development.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-tag center">Capabilities</div>
+            <h2 class="sub-title center">What I Bring to the Table</h2>
+            <div class="services-list">
+                <div class="service-card">
+                    <i class='bx bx-server service-icon'></i>
+                    <h3>High-Concurrency Backend</h3>
+                    <p>Designing and deploying modular monolith and microservice architectures with Django 5 &amp; DRF capable of sustaining high concurrent traffic with guaranteed idempotency.</p>
+                    <div class="card-tags"><span>Django 5</span><span>DRF</span><span>WebSocket</span></div>
+                </div>
+                <div class="service-card">
+                    <i class='bx bx-data service-icon'></i>
+                    <h3>PostgreSQL Optimization</h3>
+                    <p>Eliminating N+1 queries, architecting custom B-tree indexing, query tuning, ACID transactions, and row-level locking (select_for_update) to prevent race conditions.</p>
+                    <div class="card-tags"><span>PostgreSQL 16</span><span>Zero N+1</span><span>Row Locks</span></div>
+                </div>
+                <div class="service-card">
+                    <i class='bx bx-shield-check service-icon'></i>
+                    <h3>Zero-Trust Security &amp; RBAC</h3>
+                    <p>Enforcing strict server-side calculation trust (pricing/inventory), custom permission classes, CSRF protection, 2FA OTP, and database rate-limiting.</p>
+                    <div class="card-tags"><span>RBAC</span><span>2FA OTP</span><span>Server Authority</span></div>
+                </div>
+                <div class="service-card">
+                    <i class='bx bxl-docker service-icon'></i>
+                    <h3>Docker &amp; CI/CD Pipelines</h3>
+                    <p>Containerizing application stacks with Docker Compose, Nginx reverse proxy, Gunicorn workers, Celery/Redis queues, and automated GitHub Actions CI pipelines.</p>
+                    <div class="card-tags"><span>Docker</span><span>GitHub Actions</span><span>Celery</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio / Featured Projects Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="section-tag center">Featured Systems</div>
+            <h2 class="sub-title center">Production Projects &amp; Architecture</h2>
+            <div class="work-list">
+                <!-- Project 1: Paradox Shop -->
+                <div class="work-card">
+                    <div class="work-header">
+                        <span class="project-badge flagship">Flagship Enterprise</span>
+                        <h3>Paradox Shop • Modular Monolith</h3>
+                        <p class="project-desc">
+                            High-concurrency E-Commerce platform built with Django 5.2, DRF, Next.js 14, and PostgreSQL 16. Features 190 automated tests (100% pass), zero client-side pricing trust, 48 live admin endpoints, and Celery async image pipelines.
+                        </p>
+                    </div>
+                    <div class="work-tech">
+                        <span>Django 5.2</span>
+                        <span>DRF 3.15</span>
+                        <span>Next.js 14</span>
+                        <span>PostgreSQL 16</span>
+                        <span>Redis 7</span>
+                        <span>Celery</span>
+                        <span>Docker</span>
+                    </div>
+                    <div class="work-links">
+                        <a href="https://github.com/AbolfazlParadox" target="_blank" rel="noopener noreferrer" class="work-btn">
+                            <i class='bx bxl-github'></i> Code Repository
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Palace Karimi -->
+                <div class="work-card">
+                    <div class="work-header">
+                        <span class="project-badge">Production B2B</span>
+                        <h3>Palace Karimi • B2B Export Platform</h3>
+                        <p class="project-desc">
+                            International trade platform supporting 4 languages (Persian, English, Arabic, Turkish) via django-rosetta. Features database-backed rate-limiting (createcachetable) to prevent scraping, and automated 30-day gzip database backups.
+                        </p>
+                    </div>
+                    <div class="work-tech">
+                        <span>Django 5.2</span>
+                        <span>PostgreSQL 16</span>
+                        <span>i18n (4 Langs)</span>
+                        <span>Nginx SSL</span>
+                        <span>Gunicorn</span>
+                        <span>Docker</span>
+                    </div>
+                    <div class="work-links">
+                        <a href="https://github.com/AbolfazlParadox" target="_blank" rel="noopener noreferrer" class="work-btn">
+                            <i class='bx bxl-github'></i> Code Repository
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Azad Shop & Ecommerce-Ultimate -->
+                <div class="work-card">
+                    <div class="work-header">
+                        <span class="project-badge">E-Commerce Suite</span>
+                        <h3>Azad Shop &amp; Ecommerce-Ultimate</h3>
+                        <p class="project-desc">
+                            Multi-branch catalog with 3-tier RBAC (Customer, Vendor, Administrator), clean transactional checkout, Jalali calendar support, and scalable DRF endpoints.
+                        </p>
+                    </div>
+                    <div class="work-tech">
+                        <span>Python</span>
+                        <span>Django</span>
+                        <span>DRF</span>
+                        <span>PostgreSQL</span>
+                        <span>Bootstrap</span>
+                        <span>GitFlow</span>
+                    </div>
+                    <div class="work-links">
+                        <a href="https://github.com/AbolfazlParadox" target="_blank" rel="noopener noreferrer" class="work-btn">
+                            <i class='bx bxl-github'></i> Code Repository
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row contact-row">
+                <div class="contact-left">
+                    <div class="section-tag">Connect</div>
+                    <h2 class="sub-title">Let's Discuss Architecture</h2>
+                    <p class="contact-intro">
+                        Open for senior backend engineering roles, high-concurrency software consulting, and collaborative distributed system design.
+                    </p>
+                    <div class="contact-item">
+                        <i class='bx bx-envelope'></i>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:abolfazlmohammadshahi78@gmail.com">abolfazlmohammadshahi78@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class='bx bx-phone-call'></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <a href="tel:+989356727789">+98 935 672 7789</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class='bx bx-map-pin'></i>
+                        <div>
+                            <h4>Location</h4>
+                            <span>Tehran, Iran</span>
+                        </div>
+                    </div>
+
+                    <div class="social-icons">
+                        <a href="https://github.com/AbolfazlParadox" target="_blank" rel="noopener noreferrer" title="GitHub"><i class='bx bxl-github'></i></a>
+                        <a href="https://linkedin.com/in/abolfazlmohammadshahi" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                        <a href="mailto:abolfazlmohammadshahi78@gmail.com" title="Email"><i class='bx bx-envelope'></i></a>
+                        <a href="tel:+989356727789" title="Phone"><i class='bx bx-phone'></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-right">
+                    <form id="contact-form" name="contact-form">
+                        <div class="form-group">
+                            <label for="contact-name">Your Name</label>
+                            <input type="text" id="contact-name" name="Name" placeholder="e.g. Sarah Connor" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Your Email</label>
+                            <input type="email" id="contact-email" name="Email" placeholder="e.g. sarah@enterprise.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Subject</label>
+                            <input type="text" id="contact-subject" name="Subject" placeholder="e.g. Backend Architecture Consultation" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Your Message</label>
+                            <textarea id="contact-message" name="Message" rows="5" placeholder="Describe your project or inquiry..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <i class='bx bx-send'></i> Send Message
+                        </button>
+                        <div id="msg" class="form-feedback"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="noir-footer">
+        <div class="container footer-container">
+            <p>&copy; 2026 <strong>Paradox (Abolfazl Mohammadshahi)</strong>. Crafted with pure Vanilla HTML5, CSS3 &amp; ES6+.</p>
+            <div class="footer-links">
+                <a href="../../index.html">Showcase Hub</a>
+                <a href="#header">Back to Top</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="Javascripts.js"></script>
+</body>
+</html>

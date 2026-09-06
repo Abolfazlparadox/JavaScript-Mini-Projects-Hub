@@ -1,7 +1,7 @@
 {
-  "name": "javascript-mini-projects-hub",
+  "name": "paradox-codelab-javascript-hub",
   "version": "1.0.0",
-  "description": "Curated collection of modern, responsive Vanilla JavaScript mini-applications with live preview portal and modular architecture.",
+  "description": "Paradox CodeLab — Curated engineering showcase of 18 modular mini-applications and 3 personal portfolios built with pure Vanilla JavaScript (ES6+), semantic HTML5, and modern CSS by Abolfazl Mohammadshahi (Paradox).",
   "main": "index.html",
   "scripts": {
     "start": "npx serve .",
@@ -9,21 +9,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Abolfazlparadox/color-flipper.git"
+    "url": "git+https://github.com/AbolfazlParadox/JavaScript-Mini-Projects-Hub.git"
   },
   "keywords": [
     "vanilla-javascript",
     "javascript-projects",
     "dom-manipulation",
-    "color-flipper",
     "web-development",
     "frontend-showcase",
-    "wcag-accessibility"
+    "wcag-accessibility",
+    "paradox",
+    "portfolio"
   ],
-  "author": "Abolfazl Mohammadshahi <abolfazlmohammadshahi78@gmail.com>",
+  "author": "Abolfazl Mohammadshahi (Paradox) <abolfazlmohammadshahi78@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Abolfazlparadox/color-flipper/issues"
+    "url": "https://github.com/AbolfazlParadox/JavaScript-Mini-Projects-Hub/issues"
   },
-  "homepage": "https://github.com/Abolfazlparadox/color-flipper#readme"
+  "homepage": "https://github.com/AbolfazlParadox/JavaScript-Mini-Projects-Hub#readme"
 }
