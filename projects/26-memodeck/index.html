@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MemoDeck | Flashcard Study System</title>
+    <meta name="description" content="Spaced-repetition flashcards with 3D flip, SM-2 scheduling, decks and session stats." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="md-header">
+      <div class="header-left">
+        <a href="../../index.html" class="nav-hub-btn" title="Return to Projects Hub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          <span>Hub</span>
+        </a>
+        <div class="brand"><span class="brand-badge">#26</span><span class="brand-title">MemoDeck</span></div>
+      </div>
+      <div class="header-right">
+        <button class="hdr-btn" id="btnStudy" title="Start study session (S)">🎓 Study</button>
+        <button class="icon-btn" id="btnAddDeck" title="New deck (D)">📚</button>
+        <button class="icon-btn" id="btnAddCard" title="New card (N)">＋</button>
+      </div>
+    </header>
+
+    <main class="md-stage">
+      <!-- Library view -->
+      <div class="md-shell" id="libraryView">
+        <section class="glass-card stats-bar" aria-label="Statistics">
+          <div class="stat"><span class="stat-num" id="statDecks">0</span><span class="stat-label">Decks</span></div>
+          <div class="stat"><span class="stat-num" id="statCards">0</span><span class="stat-label">Cards</span></div>
+          <div class="stat"><span class="stat-num accent" id="statDue">0</span><span class="stat-label">Due now</span></div>
+          <div class="stat"><span class="stat-num green" id="statRetention">—</span><span class="stat-label">Retention</span></div>
+        </section>
+        <section class="deck-grid" id="deckGrid" aria-label="Decks"></section>
+        <div class="empty-state glass-card hidden" id="emptyState">
+          <span class="empty-icon">🎴</span><h3>No decks yet</h3><p>Create a deck and add your first cards!</p>
+        </div>
+      </div>
+
+      <!-- Study view -->
+      <div class="md-shell hidden" id="studyView">
+        <section class="glass-card study-top">
+          <button class="btn-ghost sm" id="btnExitStudy">← Library</button>
+          <div class="study-progress"><div class="study-fill" id="studyFill"></div></div>
+          <span class="study-count" id="studyCount">0 / 0</span>
+        </section>
+        <section class="flash-wrap" aria-label="Flashcard">
+          <div class="flash-inner" id="flashInner">
+            <div class="flash-face flash-front"><span class="face-tag">QUESTION</span><p id="cardFront"></p></div>
+            <div class="flash-face flash-back"><span class="face-tag">ANSWER</span><p id="cardBack"></p></div>
+          </div>
+        </section>
+        <p class="flip-hint" id="flipHint">Click the card or press <kbd>Space</kbd> to reveal</p>
+        <section class="glass-card grades hidden" id="gradeBox" aria-label="Grade recall">
+          <button class="grade g-again" data-grade="again">✕ Again <kbd>1</kbd></button>
+          <button class="grade g-hard" data-grade="hard">😅 Hard <kbd>2</kbd></button>
+          <button class="grade g-good" data-grade="good">👍 Good <kbd>3</kbd></button>
+          <button class="grade g-easy" data-grade="easy">🚀 Easy <kbd>4</kbd></button>
+        </section>
+      </div>
+    </main>
+
+    <!-- Deck modal -->
+    <div class="modal-overlay hidden" id="deckModal">
+      <div class="modal-window glass-card small">
+        <div class="modal-header"><h3 id="deckModalTitle">📚 New Deck</h3><button class="btn-close" data-close="deckModal">✕</button></div>
+        <label class="lbl">Deck name<input type="text" id="deckName" class="field" maxlength="50" placeholder="e.g. JavaScript Basics" /></label>
+        <div class="modal-footer">
+          <button class="btn-ghost danger hidden" id="btnDeleteDeck">Delete</button>
+          <div><button class="btn-ghost" data-close="deckModal">Cancel</button><button class="btn-primary" id="btnSaveDeck">Save</button></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card modal -->
+    <div class="modal-overlay hidden" id="cardModal">
+      <div class="modal-window glass-card small">
+        <div class="modal-header"><h3 id="cardModalTitle">＋ New Card</h3><button class="btn-close" data-close="cardModal">✕</button></div>
+        <div class="modal-body">
+          <label class="lbl">Deck<select id="cardDeck" class="field"></select></label>
+          <label class="lbl">Front (question)<textarea id="cardFrontInput" class="field" rows="3" maxlength="400"></textarea></label>
+          <label class="lbl">Back (answer)<textarea id="cardBackInput" class="field" rows="3" maxlength="600"></textarea></label>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-ghost danger hidden" id="btnDeleteCard">Delete</button>
+          <div><button class="btn-ghost" data-close="cardModal">Cancel</button><button class="btn-primary" id="btnSaveCard">Save</button></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deck detail modal -->
+    <div class="modal-overlay hidden" id="detailModal">
+      <div class="modal-window glass-card">
+        <div class="modal-header"><h3 id="detailTitle">Deck</h3><button class="btn-close" data-close="detailModal">✕</button></div>
+        <div class="detail-list" id="detailList"></div>
+        <div class="modal-footer end"><button class="btn-primary" data-close="detailModal">Done</button></div>
+      </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

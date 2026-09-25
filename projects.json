@@ -1,10 +1,10 @@
-[
+﻿[
   {
     "id": "01",
     "slug": "01-color-flipper",
     "title": "ChromaCraft Studio",
     "subtitle": "Advanced Color & Gradient Flipper",
-    "description": "An interactive color studio with solid HEX/RGB/HSL generation, 360° gradient controls, WCAG contrast checking, and Web Audio API synthesis.",
+    "description": "An interactive color studio with solid HEX/RGB/HSL generation, 360┬░ gradient controls, WCAG contrast checking, and Web Audio API synthesis.",
     "category": "DOM & Visuals",
     "tags": [
       "DOM Manipulation",
@@ -16,9 +16,9 @@
     "difficulty": "Intermediate",
     "path": "projects/01-color-flipper/index.html",
     "status": "completed",
-    "icon": "🎨",
+    "icon": "≡ƒÄ¿",
     "highlights": [
-      "360° Angle Dial",
+      "360┬░ Angle Dial",
       "WCAG Luminance Engine",
       "Palette Harmonies",
       "Sound Synthesis"
@@ -41,7 +41,7 @@
     "difficulty": "Intermediate",
     "path": "projects/02-calculator/index.html",
     "status": "completed",
-    "icon": "🔢",
+    "icon": "≡ƒöó",
     "highlights": [
       "Safe Math Engine",
       "History Tape",
@@ -66,11 +66,11 @@
     "difficulty": "Intermediate",
     "path": "projects/03-weather-app/index.html",
     "status": "completed",
-    "icon": "🌤️",
+    "icon": "≡ƒîñ∩╕Å",
     "highlights": [
       "Dual API & Mock Engine",
       "5-Day Forecast",
-      "°C / °F Switcher",
+      "┬░C / ┬░F Switcher",
       "Geolocation"
     ]
   },
@@ -91,7 +91,7 @@
     "difficulty": "Intermediate",
     "path": "projects/04-testimonial-slider/index.html",
     "status": "completed",
-    "icon": "💬",
+    "icon": "≡ƒÆ¼",
     "highlights": [
       "SVG Progress Ring",
       "Touch Gestures",
@@ -115,7 +115,7 @@
     "difficulty": "Intermediate",
     "path": "projects/05-circular-progress/index.html",
     "status": "completed",
-    "icon": "⏱️",
+    "icon": "ΓÅ▒∩╕Å",
     "highlights": [
       "Interactive Slider",
       "Pomodoro Timer",
@@ -139,7 +139,7 @@
     "difficulty": "Beginner / Intermediate",
     "path": "projects/06-image-gallery/index.html",
     "status": "completed",
-    "icon": "🖼️",
+    "icon": "≡ƒû╝∩╕Å",
     "highlights": [
       "Fullscreen Lightbox",
       "Filmstrip Strip",
@@ -163,7 +163,7 @@
     "difficulty": "Intermediate",
     "path": "projects/07-auth-portal/index.html",
     "status": "completed",
-    "icon": "🔐",
+    "icon": "≡ƒöÉ",
     "highlights": [
       "3-in-1 Sliding Tabs",
       "Password Strength Meter",
@@ -187,7 +187,7 @@
     "difficulty": "Intermediate",
     "path": "projects/08-social-network/index.html",
     "status": "completed",
-    "icon": "🌐",
+    "icon": "≡ƒîÉ",
     "highlights": [
       "Post Creation",
       "Live Comments Drawer",
@@ -211,7 +211,7 @@
     "difficulty": "Intermediate",
     "path": "projects/09-travel-explorer/index.html",
     "status": "completed",
-    "icon": "🗺️",
+    "icon": "≡ƒù║∩╕Å",
     "highlights": [
       "Destination Filtering",
       "Tour Booking Modal",
@@ -236,7 +236,7 @@
     "difficulty": "Advanced",
     "path": "projects/10-portfolio-classic/index.html",
     "status": "completed",
-    "icon": "🕶️",
+    "icon": "≡ƒò╢∩╕Å",
     "highlights": [
       "Noir Dark Glassmorphism",
       "Dossier Tabs (CV/Experience)",
@@ -261,7 +261,7 @@
     "difficulty": "Advanced",
     "path": "projects/11-portfolio-modern/index.html",
     "status": "completed",
-    "icon": "💻",
+    "icon": "≡ƒÆ╗",
     "highlights": [
       "Dark & Light Mode Switcher",
       "Technical Capabilities Grid",
@@ -286,7 +286,7 @@
     "difficulty": "Advanced",
     "path": "projects/12-portfolio-stellar/index.html",
     "status": "completed",
-    "icon": "🌌",
+    "icon": "≡ƒîî",
     "highlights": [
       "HTML5 Canvas Starfield",
       "Interactive Mouse Physics",
@@ -310,7 +310,7 @@
     "difficulty": "Intermediate",
     "path": "projects/13-taskflow-crud/index.html",
     "status": "completed",
-    "icon": "📝",
+    "icon": "≡ƒô¥",
     "highlights": [
       "Full CRUD Operations",
       "LocalStorage Persistence",
@@ -333,7 +333,7 @@
     "difficulty": "Advanced",
     "path": "projects/14-beatpulse-synth/index.html",
     "status": "completed",
-    "icon": "🎹",
+    "icon": "≡ƒÄ╣",
     "highlights": [
       "Step Sequencer Grid",
       "Oscillator Controls",
@@ -357,7 +357,7 @@
     "difficulty": "Intermediate",
     "path": "projects/15-markdown-studio/index.html",
     "status": "completed",
-    "icon": "📑",
+    "icon": "≡ƒôæ",
     "highlights": [
       "Dual-Pane Sync Scroll",
       "Custom Markdown Parser",
@@ -381,7 +381,7 @@
     "difficulty": "Advanced",
     "path": "projects/16-cryptopulse/index.html",
     "status": "completed",
-    "icon": "📈",
+    "icon": "≡ƒôê",
     "highlights": [
       "Live WebSocket Stream",
       "Canvas Micro-Charts",
@@ -405,7 +405,7 @@
     "difficulty": "Intermediate",
     "path": "projects/17-kanbanflow/index.html",
     "status": "completed",
-    "icon": "📋",
+    "icon": "≡ƒôï",
     "highlights": [
       "HTML5 Drag & Drop",
       "Dynamic Columns",
@@ -429,12 +429,252 @@
     "difficulty": "Intermediate",
     "path": "projects/18-devtyping-test/index.html",
     "status": "completed",
-    "icon": "⚡",
+    "icon": "ΓÜí",
     "highlights": [
       "Real Code Snippets",
       "Live WPM & Accuracy Calc",
       "Error Syntax Highlighting",
       "Personal Best History"
+    ]
+  },
+  {
+    "id": "19",
+    "slug": "19-passforge",
+    "title": "PassForge Studio",
+    "subtitle": "Credential & Passphrase Generator",
+    "description": "Cryptographically secure password, passphrase and PIN studio with live entropy analysis, crack-time estimates and a 24-slot clipboard history.",
+    "category": "Utilities & Tools",
+    "tags": [
+      "Web Crypto API",
+      "Entropy Analyzer",
+      "Clipboard API",
+      "Passphrases"
+    ],
+    "difficulty": "Intermediate",
+    "path": "projects/19-passforge/index.html",
+    "status": "completed",
+    "icon": "≡ƒöæ",
+    "highlights": [
+      "crypto.getRandomValues",
+      "Diceware Passphrases",
+      "Crack-Time Estimates",
+      "24-Slot History"
+    ]
+  },
+  {
+    "id": "20",
+    "slug": "20-spendwise",
+    "title": "SpendWise Tracker",
+    "subtitle": "Personal Budget & Expense Analytics",
+    "description": "Personal finance dashboard with expense CRUD, animated SVG budget ring, canvas donut charts, 6-month trends and CSV export.",
+    "category": "State & Logic",
+    "tags": [
+      "Data Viz",
+      "Canvas Charts",
+      "CSV Export",
+      "LocalStorage"
+    ],
+    "difficulty": "Advanced",
+    "path": "projects/20-spendwise/index.html",
+    "status": "completed",
+    "icon": "≡ƒÆ░",
+    "highlights": [
+      "SVG Budget Ring",
+      "Canvas Donut & Bars",
+      "Month Navigation",
+      "CSV Export"
+    ]
+  },
+  {
+    "id": "21",
+    "slug": "21-habitforge",
+    "title": "HabitForge Tracker",
+    "subtitle": "Streak Engine & Habit Analytics",
+    "description": "Gamified habit tracker with streak engine, 18-week GitHub-style heatmap, XP levels and trailing-7-day completion grids.",
+    "category": "State & Logic",
+    "tags": [
+      "Streak Engine",
+      "Heatmap",
+      "Gamification",
+      "LocalStorage"
+    ],
+    "difficulty": "Intermediate",
+    "path": "projects/21-habitforge/index.html",
+    "status": "completed",
+    "icon": "≡ƒöÑ",
+    "highlights": [
+      "Streak Detection",
+      "18-Week Heatmap",
+      "XP Level System",
+      "Custom Icons"
+    ]
+  },
+  {
+    "id": "22",
+    "slug": "22-jsonlens",
+    "title": "JSONLens Studio",
+    "subtitle": "Formatter, Validator & Tree Explorer",
+    "description": "Developer JSON workbench with live validation, gutter line pinpointing, syntax highlighting, collapsible tree explorer and file I/O.",
+    "category": "Utilities & Tools",
+    "tags": [
+      "JSON Parser",
+      "Syntax Highlight",
+      "Tree View",
+      "File API"
+    ],
+    "difficulty": "Intermediate",
+    "path": "projects/22-jsonlens/index.html",
+    "status": "completed",
+    "icon": "≡ƒº¼",
+    "highlights": [
+      "Live Validation",
+      "Gutter Errors",
+      "Collapsible Tree",
+      "Stats Panel"
+    ]
+  },
+  {
+    "id": "23",
+    "slug": "23-regexlab",
+    "title": "RegexLab Playground",
+    "subtitle": "Live Pattern Tester & Cheatsheet",
+    "description": "Interactive regex laboratory with live match highlighting, $1ΓÇô$n group inspector, replace preview, presets and a 20-token cheatsheet.",
+    "category": "Utilities & Tools",
+    "tags": [
+      "RegExp Engine",
+      "Live Highlight",
+      "Replace Preview",
+      "Cheatsheet"
+    ],
+    "difficulty": "Intermediate",
+    "path": "projects/23-regexlab/index.html",
+    "status": "completed",
+    "icon": "≡ƒº¬",
+    "highlights": [
+      "6 Regex Flags",
+      "Group Inspector",
+      "Replace Preview",
+      "Saved Library"
+    ]
+  },
+  {
+    "id": "24",
+    "slug": "24-timewarp",
+    "title": "TimeWarp Console",
+    "subtitle": "World Clock, Stopwatch & Countdown",
+    "description": "Precision time console with 15 IANA world clocks, centisecond stopwatch with laps, and a countdown ring with Web Audio alarms.",
+    "category": "Utilities & Tools",
+    "tags": [
+      "Intl API",
+      "Canvas Analog",
+      "Stopwatch",
+      "Web Audio"
+    ],
+    "difficulty": "Intermediate",
+    "path": "projects/24-timewarp/index.html",
+    "status": "completed",
+    "icon": "ΓÅ│",
+    "highlights": [
+      "15 World Zones",
+      "Lap Analytics",
+      "Countdown Ring",
+      "Audio Alarms"
+    ]
+  },
+  {
+    "id": "25",
+    "slug": "25-snippetvault",
+    "title": "SnippetVault Manager",
+    "subtitle": "Code Snippet Library & Backup",
+    "description": "Developer snippet library with full-text search, language filters, one-click copy, favorites and validated JSON backup/restore.",
+    "category": "Utilities & Tools",
+    "tags": [
+      "CRUD",
+      "Full-Text Search",
+      "Clipboard API",
+      "JSON Backup"
+    ],
+    "difficulty": "Intermediate",
+    "path": "projects/25-snippetvault/index.html",
+    "status": "completed",
+    "icon": "≡ƒùâ∩╕Å",
+    "highlights": [
+      "Instant Search",
+      "Lang Filters",
+      "One-Click Copy",
+      "JSON Backup"
+    ]
+  },
+  {
+    "id": "26",
+    "slug": "26-memodeck",
+    "title": "MemoDeck Flashcards",
+    "subtitle": "Spaced-Repetition Study System",
+    "description": "SM-2-lite flashcard studio with 3D flip study mode, 4-grade recall scoring, due scheduling and retention analytics.",
+    "category": "State & Logic",
+    "tags": [
+      "Spaced Repetition",
+      "3D Flip",
+      "SM-2 Algorithm",
+      "Study Stats"
+    ],
+    "difficulty": "Advanced",
+    "path": "projects/26-memodeck/index.html",
+    "status": "completed",
+    "icon": "≡ƒâÅ",
+    "highlights": [
+      "SM-2 Scheduling",
+      "3D Card Flip",
+      "4-Grade Scoring",
+      "Retention Stats"
+    ]
+  },
+  {
+    "id": "27",
+    "slug": "27-choicewheel",
+    "title": "ChoiceWheel Spinner",
+    "subtitle": "Weighted Decision Wheel",
+    "description": "Animated canvas decision wheel with weighted segments, tick-sound physics, confetti winner reveals and a 20-winner history.",
+    "category": "Media & Canvas",
+    "tags": [
+      "Canvas Physics",
+      "Weighted Random",
+      "Confetti",
+      "Web Audio"
+    ],
+    "difficulty": "Intermediate",
+    "path": "projects/27-choicewheel/index.html",
+    "status": "completed",
+    "icon": "≡ƒÄí",
+    "highlights": [
+      "Weighted Segments",
+      "Ease-Out Spin",
+      "Tick Sounds",
+      "Confetti Reveal"
+    ]
+  },
+  {
+    "id": "28",
+    "slug": "28-invoiceforge",
+    "title": "InvoiceForge Generator",
+    "subtitle": "Professional Invoice Builder",
+    "description": "Invoice generator with live print-ready preview, line items, tax/discount math, status stamps and print-to-PDF export.",
+    "category": "Utilities & Tools",
+    "tags": [
+      "Print CSS",
+      "Live Preview",
+      "Tax Engine",
+      "JSON Backup"
+    ],
+    "difficulty": "Intermediate",
+    "path": "projects/28-invoiceforge/index.html",
+    "status": "completed",
+    "icon": "≡ƒº╛",
+    "highlights": [
+      "Live Paper Preview",
+      "Line Items",
+      "Tax & Discount",
+      "Print to PDF"
     ]
   }
 ]

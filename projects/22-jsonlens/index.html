@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSONLens Studio | Formatter, Validator & Tree Explorer</title>
+    <meta name="description" content="Format, validate, minify and explore JSON with error pinpointing, tree view and document stats." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="jl-header">
+      <div class="header-left">
+        <a href="../../index.html" class="nav-hub-btn" title="Return to Projects Hub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          <span>Hub</span>
+        </a>
+        <div class="brand"><span class="brand-badge">#22</span><span class="brand-title">JSONLens Studio</span></div>
+        <span class="valid-pill ok" id="validPill">● Valid JSON</span>
+      </div>
+      <div class="header-right">
+        <button class="icon-btn" id="btnCopy" title="Copy output (Ctrl+C)">📋</button>
+        <button class="icon-btn" id="btnDownload" title="Download .json">📥</button>
+      </div>
+    </header>
+
+    <div class="toolbar" aria-label="JSON actions">
+      <button id="btnFormat" class="primary">✨ Format</button>
+      <button id="btnMinify">📦 Minify</button>
+      <button id="btnValidate">✅ Validate</button>
+      <span class="sep"></span>
+      <label class="indent-lbl">Indent <select id="indentSelect" class="field-sm"><option value="2">2</option><option value="4">4</option><option value="tab">tab</option></select></label>
+      <span class="sep"></span>
+      <button id="btnSample">📄 Sample</button>
+      <button id="btnLoad">📂 Load file</button>
+      <button id="btnClear" class="danger">🧹 Clear</button>
+      <input type="file" id="fileInput" accept="application/json,.json" class="hidden" />
+    </div>
+
+    <main class="jl-stage">
+      <section class="pane input-pane" aria-label="JSON input">
+        <div class="pane-head"><span>📝 input</span><span class="stat-line" id="inputStat">0 chars</span></div>
+        <div class="editor-wrap">
+          <div class="gutter" id="gutter">1</div>
+          <textarea id="editor" spellcheck="false" placeholder='Paste JSON here… e.g. {"hello": "world"}'></textarea>
+        </div>
+        <div class="error-bar hidden" id="errorBar">⚠️ <span id="errorText"></span></div>
+      </section>
+      <section class="pane output-pane" aria-label="Formatted output">
+        <div class="pane-head">
+          <div class="view-tabs" id="viewTabs">
+            <button class="view-btn active" data-view="pretty">🎨 Pretty</button>
+            <button class="view-btn" data-view="tree">🌳 Tree</button>
+          </div>
+          <span class="stat-line" id="docStats">—</span>
+        </div>
+        <pre class="pretty-out" id="prettyOut"><code>—</code></pre>
+        <div class="tree-out hidden" id="treeOut"></div>
+      </section>
+    </main>
+
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

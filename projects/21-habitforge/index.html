@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HabitForge | Streaks & Habit Tracker</title>
+    <meta name="description" content="Build streaks with a GitHub-style heatmap, weekly check-ins, XP levels and habit analytics." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hb-header">
+      <div class="header-left">
+        <a href="../../index.html" class="nav-hub-btn" title="Return to Projects Hub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          <span>Hub</span>
+        </a>
+        <div class="brand"><span class="brand-badge">#21</span><span class="brand-title">HabitForge</span></div>
+      </div>
+      <div class="header-right">
+        <div class="xp-pill" id="xpPill" title="Experience points">⚡ <strong id="xpLevel">Lv 1</strong><span id="xpPoints">0 XP</span></div>
+        <button class="hdr-btn" id="btnAdd" title="New habit (N)">＋ Habit</button>
+      </div>
+    </header>
+
+    <main class="hb-stage">
+      <div class="hb-shell">
+        <section class="glass-card stats-bar" aria-label="Statistics">
+          <div class="stat"><span class="stat-num" id="statHabits">0</span><span class="stat-label">Habits</span></div>
+          <div class="stat"><span class="stat-num accent" id="statCheckins">0</span><span class="stat-label">Check-ins</span></div>
+          <div class="stat"><span class="stat-num fire" id="statStreak">0🔥</span><span class="stat-label">Best streak</span></div>
+          <div class="stat"><span class="stat-num green" id="statToday">0%</span><span class="stat-label">Today</span></div>
+        </section>
+
+        <section class="glass-card" aria-label="Activity heatmap">
+          <h2>🗓️ Activity <span class="sub">last 18 weeks • all habits combined</span></h2>
+          <div class="heatmap-scroll"><div class="heatmap" id="heatmap"></div></div>
+          <div class="heat-legend"><span>Less</span><i class="lv0"></i><i class="lv1"></i><i class="lv2"></i><i class="lv3"></i><i class="lv4"></i><span>More</span></div>
+        </section>
+
+        <section aria-label="Habits"><div class="habit-list" id="habitList"></div>
+          <div class="empty-state glass-card hidden" id="emptyState">
+            <span class="empty-icon">🌱</span><h3>No habits yet</h3>
+            <p>Create your first habit and start forging streaks!</p>
+            <button class="btn-primary" id="btnAddEmpty">＋ New Habit</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div class="modal-overlay hidden" id="habitModal">
+      <div class="modal-window glass-card small">
+        <div class="modal-header"><h3 id="modalTitle">＋ New Habit</h3><button class="btn-close" id="btnClose">✕</button></div>
+        <div class="modal-body">
+          <label class="lbl">Habit name<input type="text" id="hName" class="field" maxlength="50" placeholder="e.g. Read 20 pages" /></label>
+          <div class="lbl">Icon<div class="icon-pick" id="iconPick"></div></div>
+          <div class="lbl">Color<div class="color-pick" id="colorPick"></div></div>
+          <label class="lbl">Weekly target
+            <select id="hTarget" class="field">
+              <option value="7">Every day (7/week)</option>
+              <option value="5">Weekdays (5/week)</option>
+              <option value="3">3 times / week</option>
+              <option value="1">Once / week</option>
+            </select>
+          </label>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-ghost danger hidden" id="btnDelete">Delete</button>
+          <div><button class="btn-ghost" id="btnCancel">Cancel</button><button class="btn-primary" id="btnSave">Save</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

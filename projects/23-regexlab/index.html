@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RegexLab | Live Regular Expression Playground</title>
+    <meta name="description" content="Test regex live with match highlighting, capture groups, replace preview, cheatsheet and saved patterns." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="rx-header">
+      <div class="header-left">
+        <a href="../../index.html" class="nav-hub-btn" title="Return to Projects Hub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          <span>Hub</span>
+        </a>
+        <div class="brand"><span class="brand-badge">#23</span><span class="brand-title">RegexLab</span></div>
+        <span class="match-pill" id="matchPill">0 matches</span>
+      </div>
+      <div class="header-right">
+        <button class="icon-btn" id="btnSave" title="Save pattern (Ctrl+S)">💾</button>
+        <button class="icon-btn" id="btnCheat" title="Cheatsheet (?)">📖</button>
+      </div>
+    </header>
+
+    <main class="rx-stage">
+      <div class="rx-shell">
+        <section class="glass-card pattern-card" aria-label="Pattern">
+          <div class="pattern-row">
+            <span class="slash">/</span>
+            <input type="text" id="patternInput" class="pattern-input" placeholder="e.g. (\w+)@(\w+\.\w+)" autocomplete="off" spellcheck="false" />
+            <span class="slash">/</span>
+            <div class="flags" id="flagBox">
+              <label title="global"><input type="checkbox" data-flag="g" checked />g</label>
+              <label title="ignore case"><input type="checkbox" data-flag="i" />i</label>
+              <label title="multiline"><input type="checkbox" data-flag="m" checked />m</label>
+              <label title="dotAll"><input type="checkbox" data-flag="s" />s</label>
+              <label title="unicode"><input type="checkbox" data-flag="u" />u</label>
+              <label title="sticky"><input type="checkbox" data-flag="y" />y</label>
+            </div>
+          </div>
+          <div class="rx-error hidden" id="rxError"></div>
+          <div class="quick-row" id="quickRow" aria-label="Pattern presets"></div>
+        </section>
+
+        <div class="two-col">
+          <section class="glass-card" aria-label="Test string">
+            <h2>📝 Test String</h2>
+            <textarea id="testInput" spellcheck="false" placeholder="Type or paste text to test against…"></textarea>
+          </section>
+          <section class="glass-card" aria-label="Highlighted matches">
+            <h2>✨ Matches <span class="sub" id="matchSub"></span></h2>
+            <div class="highlight-box" id="highlightBox"><span class="dim">No matches yet.</span></div>
+            <div class="groups-list" id="groupsList"></div>
+          </section>
+        </div>
+
+        <section class="glass-card" aria-label="Replace preview">
+          <h2>🔁 Replace <span class="sub">supports $1, $2 … $&</span></h2>
+          <div class="replace-grid">
+            <input type="text" id="replaceInput" class="field" placeholder="Replacement… e.g. [$1]" spellcheck="false" />
+            <button class="btn-ghost" id="btnApplyReplace">Apply to test string</button>
+          </div>
+          <pre class="replace-out" id="replaceOut"><span class="dim">Replace preview appears here.</span></pre>
+        </section>
+      </div>
+    </main>
+
+    <div class="modal-overlay hidden" id="cheatModal">
+      <div class="modal-window glass-card">
+        <div class="modal-header"><h3>📖 Regex Cheatsheet</h3><button class="btn-close" id="btnCloseCheat">✕</button></div>
+        <div class="cheat-grid" id="cheatGrid"></div>
+        <div class="modal-footer end"><button class="btn-primary" id="btnDoneCheat">Got it</button></div>
+      </div>
+    </div>
+
+    <div class="modal-overlay hidden" id="saveModal">
+      <div class="modal-window glass-card small">
+        <div class="modal-header"><h3>💾 Save Pattern</h3><button class="btn-close" id="btnCloseSave">✕</button></div>
+        <label class="lbl">Name<input type="text" id="saveName" class="field" maxlength="40" placeholder="e.g. Email validator" /></label>
+        <h4 class="saved-title">Saved patterns</h4>
+        <div class="saved-list" id="savedList"></div>
+        <div class="modal-footer end"><button class="btn-primary" id="btnDoSave">Save current</button></div>
+      </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TimeWarp Studio | World Clock, Stopwatch & Countdown</title>
+    <meta name="description" content="Multi-zone world clock with analog canvas, precision stopwatch with laps, and countdown timer with alarm." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="tw-header">
+      <div class="header-left">
+        <a href="../../index.html" class="nav-hub-btn" title="Return to Projects Hub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          <span>Hub</span>
+        </a>
+        <div class="brand"><span class="brand-badge">#24</span><span class="brand-title">TimeWarp Studio</span></div>
+      </div>
+      <div class="header-right">
+        <button class="icon-btn" id="btnSound" title="Toggle sound">🔊</button>
+      </div>
+    </header>
+
+    <main class="tw-stage">
+      <div class="tw-shell">
+        <div class="mode-tabs" id="modeTabs" role="tablist">
+          <button class="mode-btn active" data-tab="clock">🕰️ World Clock</button>
+          <button class="mode-btn" data-tab="stopwatch">⏱️ Stopwatch</button>
+          <button class="mode-btn" data-tab="countdown">⏳ Countdown</button>
+        </div>
+
+        <!-- World clock -->
+        <section id="tab-clock">
+          <div class="glass-card hero-clock">
+            <canvas id="analogCanvas"></canvas>
+            <div class="hero-digital">
+              <span class="hero-time" id="localTime">--:--:--</span>
+              <span class="hero-date" id="localDate">—</span>
+              <span class="hero-tz" id="localTz">Local time</span>
+            </div>
+          </div>
+          <div class="glass-card">
+            <div class="zone-head"><h2>🌍 Time Zones</h2>
+              <div class="zone-add">
+                <select id="zoneSelect" class="field field-sm"></select>
+                <button class="btn-ghost sm" id="btnAddZone">＋ Add</button>
+              </div>
+            </div>
+            <div class="zone-grid" id="zoneGrid"></div>
+          </div>
+        </section>
+
+        <!-- Stopwatch -->
+        <section id="tab-stopwatch" class="hidden">
+          <div class="glass-card sw-card">
+            <div class="sw-display" id="swDisplay">00:00<span>.00</span></div>
+            <div class="sw-btns">
+              <button class="btn-primary" id="btnSwStart">▶ Start</button>
+              <button class="btn-ghost" id="btnSwLap">🏁 Lap</button>
+              <button class="btn-ghost" id="btnSwReset">↻ Reset</button>
+            </div>
+            <ul class="laps-list" id="lapsList"></ul>
+            <p class="laps-empty" id="lapsEmpty">No laps yet — press Lap while running.</p>
+          </div>
+        </section>
+
+        <!-- Countdown -->
+        <section id="tab-countdown" class="hidden">
+          <div class="glass-card cd-card">
+            <div class="cd-ring-wrap">
+              <svg width="220" height="220" viewBox="0 0 220 220">
+                <circle class="ring-track" cx="110" cy="110" r="96"></circle>
+                <circle class="ring-fill" id="cdRing" cx="110" cy="110" r="96"></circle>
+              </svg>
+              <div class="cd-center"><span class="cd-time" id="cdDisplay">25:00</span><span class="cd-sub" id="cdSub">ready</span></div>
+            </div>
+            <div class="cd-inputs">
+              <label>H<input type="number" id="cdH" class="field" min="0" max="23" value="0" /></label>
+              <label>M<input type="number" id="cdM" class="field" min="0" max="59" value="25" /></label>
+              <label>S<input type="number" id="cdS" class="field" min="0" max="59" value="0" /></label>
+            </div>
+            <div class="cd-presets">
+              <button data-cd="300">5m</button><button data-cd="600">10m</button>
+              <button data-cd="1500">🍅 25m</button><button data-cd="2700">45m</button><button data-cd="3600">1h</button>
+            </div>
+            <div class="cd-btns">
+              <button class="btn-primary" id="btnCdStart">▶ Start</button>
+              <button class="btn-ghost" id="btnCdReset">↻ Reset</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

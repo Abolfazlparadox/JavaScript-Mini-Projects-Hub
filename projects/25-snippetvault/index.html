@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SnippetVault | Code Snippet Manager</title>
+    <meta name="description" content="Save, search, tag and reuse code snippets with copy-to-clipboard and JSON backup." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="sv-header">
+      <div class="header-left">
+        <a href="../../index.html" class="nav-hub-btn" title="Return to Projects Hub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          <span>Hub</span>
+        </a>
+        <div class="brand"><span class="brand-badge">#25</span><span class="brand-title">SnippetVault</span></div>
+        <span class="count-pill" id="countPill">0 snippets</span>
+      </div>
+      <div class="header-right">
+        <button class="hdr-btn" id="btnAdd" title="New snippet (N)">＋ Snippet</button>
+        <button class="icon-btn" id="btnExport" title="Export JSON">📥</button>
+        <button class="icon-btn" id="btnImport" title="Import JSON">📤</button>
+        <input type="file" id="importFile" accept="application/json" class="hidden" />
+      </div>
+    </header>
+
+    <main class="sv-stage">
+      <div class="sv-shell">
+        <section class="glass-card toolbar" aria-label="Search and filter">
+          <div class="search-wrap">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="searchInput" placeholder="Search title, code, tags... ( / )" autocomplete="off" />
+          </div>
+          <select id="filterLang" class="field field-sm" title="Filter by language"></select>
+          <button class="pill-toggle" id="favToggle" title="Favorites only">⭐ Favorites</button>
+        </section>
+
+        <section class="snip-grid" id="snipGrid" aria-label="Snippets"></section>
+        <div class="empty-state glass-card hidden" id="emptyState">
+          <span class="empty-icon">🗃️</span><h3>No snippets found</h3>
+          <p>Save your first reusable code snippet!</p>
+          <button class="btn-primary" id="btnAddEmpty">＋ New Snippet</button>
+        </div>
+      </div>
+    </main>
+
+    <div class="modal-overlay hidden" id="snipModal">
+      <div class="modal-window glass-card">
+        <div class="modal-header"><h3 id="modalTitle">＋ New Snippet</h3><button class="btn-close" id="btnClose">✕</button></div>
+        <div class="modal-body">
+          <label class="lbl">Title<input type="text" id="sTitle" class="field" maxlength="80" placeholder="e.g. Debounce function" /></label>
+          <div class="modal-row">
+            <label class="lbl">Language
+              <select id="sLang" class="field">
+                <option>JavaScript</option><option>Python</option><option>HTML</option><option>CSS</option>
+                <option>TypeScript</option><option>SQL</option><option>Bash</option><option>JSON</option><option>Other</option>
+              </select>
+            </label>
+            <label class="lbl">Tags (comma)<input type="text" id="sTags" class="field" maxlength="80" placeholder="utils, dom" /></label>
+          </div>
+          <label class="lbl">Description<input type="text" id="sDesc" class="field" maxlength="140" placeholder="What does it do?" /></label>
+          <label class="lbl">Code<textarea id="sCode" class="field code-field" rows="8" spellcheck="false" placeholder="Paste your code here…"></textarea></label>
+          <label class="lbl lbl-check"><input type="checkbox" id="sFav" /> ⭐ Mark as favorite</label>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-ghost danger hidden" id="btnDelete">Delete</button>
+          <div><button class="btn-ghost" id="btnCancel">Cancel</button><button class="btn-primary" id="btnSave">Save</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

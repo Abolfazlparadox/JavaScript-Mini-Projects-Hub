@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChoiceWheel | Decision Spinner</title>
+    <meta name="description" content="Spin a physics-based decision wheel with weighted options, tick sounds, confetti and winner history." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="cw-header">
+      <div class="header-left">
+        <a href="../../index.html" class="nav-hub-btn" title="Return to Projects Hub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          <span>Hub</span>
+        </a>
+        <div class="brand"><span class="brand-badge">#27</span><span class="brand-title">ChoiceWheel</span></div>
+      </div>
+      <div class="header-right">
+        <button class="icon-btn" id="btnSound" title="Toggle sound">🔊</button>
+      </div>
+    </header>
+
+    <main class="cw-stage">
+      <div class="cw-shell">
+        <section class="glass-card wheel-card" aria-label="Decision wheel">
+          <div class="wheel-wrap">
+            <div class="pointer">▼</div>
+            <canvas id="wheelCanvas"></canvas>
+            <button class="spin-hub" id="btnSpin" title="Spin (Space)">SPIN</button>
+          </div>
+          <div class="wheel-status" id="wheelStatus">Add options → press SPIN 🎡</div>
+        </section>
+
+        <section class="glass-card opts-card" aria-label="Options">
+          <h2>📝 Options <span class="sub" id="optCount"></span></h2>
+          <div class="add-row">
+            <input type="text" id="optInput" class="field" placeholder="New option… (Enter)" maxlength="40" />
+            <select id="optWeight" class="field field-sm" title="Weight (slice size)">
+              <option value="1">×1</option><option value="2">×2</option><option value="3">×3</option>
+              <option value="4">×4</option><option value="5">×5</option>
+            </select>
+            <button class="btn-primary sm" id="btnAddOpt">Add</button>
+          </div>
+          <ul class="opt-list" id="optList"></ul>
+          <div class="opt-tools">
+            <button class="btn-ghost sm" id="btnShuffle">🔀 Shuffle colors</button>
+            <button class="btn-ghost sm danger" id="btnClearOpts">Clear all</button>
+          </div>
+          <h2 class="hist-title">🏆 Winner History</h2>
+          <ul class="hist-list" id="histList"></ul>
+        </section>
+      </div>
+    </main>
+
+    <div class="modal-overlay hidden" id="winnerModal">
+      <div class="modal-window glass-card winner-card">
+        <canvas id="confettiCanvas"></canvas>
+        <div class="winner-inner">
+          <span class="winner-crown">👑</span>
+          <h3>Winner!</h3>
+          <div class="winner-name" id="winnerName">—</div>
+          <div class="winner-btns">
+            <button class="btn-ghost" id="btnRemoveWinner">Remove & re-spin</button>
+            <button class="btn-ghost" id="btnKeepWinner">Keep</button>
+            <button class="btn-primary" id="btnSpinAgain">Spin again</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
