@@ -1,4 +1,4 @@
-﻿/**
+/**
  * JavaScript Mini Projects Hub | Interactive Controller
  */
 
@@ -13,14 +13,14 @@
       title: 'ChromaCraft Studio',
       subtitle: 'Advanced Color & Gradient Flipper',
       description:
-        'An interactive color studio with solid HEX/RGB/HSL generation, 360┬░ gradient controls, WCAG contrast checking, and Web Audio API synthesis.',
+        'An interactive color studio with solid HEX/RGB/HSL generation, 360° gradient controls, WCAG contrast checking, and Web Audio API synthesis.',
       category: 'DOM & Visuals',
       tags: ['DOM Manipulation', 'Color Spaces', 'WCAG', 'Audio API', 'LocalStorage'],
       difficulty: 'Intermediate',
       path: 'projects/01-color-flipper/index.html',
       status: 'completed',
-      icon: '≡ƒÄ¿',
-      highlights: ['360┬░ Angle Dial', 'WCAG Luminance Engine', 'Palette Harmonies', 'Sound Synthesis'],
+      icon: '🎨',
+      highlights: ['360° Angle Dial', 'WCAG Luminance Engine', 'Palette Harmonies', 'Sound Synthesis'],
     },
     {
       id: '02',
@@ -34,7 +34,7 @@
       difficulty: 'Intermediate',
       path: 'projects/02-calculator/index.html',
       status: 'completed',
-      icon: '≡ƒöó',
+      icon: '🔢',
       highlights: ['Safe Math Engine', 'History Tape', 'Memory Functions', 'Numpad Support'],
     },
     {
@@ -49,8 +49,8 @@
       difficulty: 'Intermediate',
       path: 'projects/03-weather-app/index.html',
       status: 'completed',
-      icon: '≡ƒîñ∩╕Å',
-      highlights: ['Dual API & Mock Engine', '5-Day Forecast', '┬░C / ┬░F Switcher', 'Geolocation'],
+      icon: '🌤️',
+      highlights: ['Dual API & Mock Engine', '5-Day Forecast', '°C / °F Switcher', 'Geolocation'],
     },
     {
       id: '04',
@@ -64,7 +64,7 @@
       difficulty: 'Intermediate',
       path: 'projects/04-testimonial-slider/index.html',
       status: 'completed',
-      icon: '≡ƒÆ¼',
+      icon: '💬',
       highlights: ['SVG Progress Ring', 'Touch Gestures', 'Random Review', 'Add Review Modal'],
     },
     {
@@ -79,7 +79,7 @@
       difficulty: 'Intermediate',
       path: 'projects/05-circular-progress/index.html',
       status: 'completed',
-      icon: 'ΓÅ▒∩╕Å',
+      icon: '⏱️',
       highlights: ['Interactive Slider', 'Pomodoro Timer', 'Upload Simulator', 'Gradient Palettes'],
     },
     {
@@ -94,7 +94,7 @@
       difficulty: 'Beginner / Intermediate',
       path: 'projects/06-image-gallery/index.html',
       status: 'completed',
-      icon: '≡ƒû╝∩╕Å',
+      icon: '🖼️',
       highlights: ['Fullscreen Lightbox', 'Filmstrip Strip', 'Category Filters', 'Image Download'],
     },
     {
@@ -109,7 +109,7 @@
       difficulty: 'Intermediate',
       path: 'projects/07-auth-portal/index.html',
       status: 'completed',
-      icon: '≡ƒöÉ',
+      icon: '🔐',
       highlights: ['3-in-1 Sliding Tabs', 'Password Strength Meter', 'Eye Toggle', 'Session State'],
     },
     {
@@ -124,7 +124,7 @@
       difficulty: 'Intermediate',
       path: 'projects/08-social-network/index.html',
       status: 'completed',
-      icon: '≡ƒîÉ',
+      icon: '🌐',
       highlights: ['Post Creation', 'Live Comments Drawer', 'Story Viewer Modal', 'Reaction Counters'],
     },
     {
@@ -139,7 +139,7 @@
       difficulty: 'Intermediate',
       path: 'projects/09-travel-explorer/index.html',
       status: 'completed',
-      icon: '≡ƒù║∩╕Å',
+      icon: '🗺️',
       highlights: ['Destination Filtering', 'Tour Booking Modal', 'Seasonal Escapes', 'Mobile Drawer'],
     },
     {
@@ -154,7 +154,7 @@
       difficulty: 'Advanced',
       path: 'projects/10-portfolio-classic/index.html',
       status: 'completed',
-      icon: '≡ƒò╢∩╕Å',
+      icon: '🕶️',
       highlights: ['Noir Dark Glassmorphism', 'Dossier Tabs (CV/Experience)', '190+ Tests Verified', 'Responsive Layout'],
     },
     {
@@ -169,7 +169,7 @@
       difficulty: 'Advanced',
       path: 'projects/11-portfolio-modern/index.html',
       status: 'completed',
-      icon: '≡ƒÆ╗',
+      icon: '💻',
       highlights: ['Dark & Light Mode Switcher', 'Technical Capabilities Grid', 'Production Systems', 'Academic Rigor (18.50 GPA)'],
     },
     {
@@ -184,7 +184,7 @@
       difficulty: 'Advanced',
       path: 'projects/12-portfolio-stellar/index.html',
       status: 'completed',
-      icon: '≡ƒîî',
+      icon: '🌌',
       highlights: ['HTML5 Canvas Starfield', 'Interactive Mouse Physics', 'Modular Monolith Systems', 'Executive Design'],
     },
     {
@@ -199,7 +199,7 @@
       difficulty: 'Intermediate',
       path: 'projects/13-taskflow-crud/index.html',
       status: 'completed',
-      icon: '≡ƒô¥',
+      icon: '📝',
       highlights: ['Full CRUD Operations', 'LocalStorage Persistence', 'Alert Badges'],
     },
     {
@@ -214,7 +214,7 @@
       difficulty: 'Advanced',
       path: 'projects/14-beatpulse-synth/index.html',
       status: 'completed',
-      icon: '≡ƒÄ╣',
+      icon: '🎹',
       highlights: ['Step Sequencer Grid', 'Oscillator Controls', 'Live FFT Visualizer', 'BPM Master Clock'],
     },
     {
@@ -229,7 +229,7 @@
       difficulty: 'Intermediate',
       path: 'projects/15-markdown-studio/index.html',
       status: 'completed',
-      icon: '≡ƒôæ',
+      icon: '📑',
       highlights: ['Dual-Pane Sync Scroll', 'Custom Markdown Parser', 'HTML/PDF Export', 'Word/Char Counter'],
     },
     {
@@ -244,7 +244,7 @@
       difficulty: 'Advanced',
       path: 'projects/16-cryptopulse/index.html',
       status: 'completed',
-      icon: '≡ƒôê',
+      icon: '📈',
       highlights: ['Live WebSocket Stream', 'Canvas Micro-Charts', 'Custom Price Alerts', 'Volume Order Book'],
     },
     {
@@ -259,7 +259,7 @@
       difficulty: 'Intermediate',
       path: 'projects/17-kanbanflow/index.html',
       status: 'completed',
-      icon: '≡ƒôï',
+      icon: '📋',
       highlights: ['HTML5 Drag & Drop', 'Dynamic Columns', 'Priority Color Badges', 'JSON Import/Export'],
     },
     {
@@ -274,7 +274,7 @@
       difficulty: 'Intermediate',
       path: 'projects/18-devtyping-test/index.html',
       status: 'completed',
-      icon: 'ΓÜí',
+      icon: '⚡',
       highlights: ['Real Code Snippets', 'Live WPM & Accuracy Calc', 'Error Syntax Highlighting', 'Personal Best History'],
     },
     {
@@ -289,7 +289,7 @@
       difficulty: 'Intermediate',
       path: 'projects/19-passforge/index.html',
       status: 'completed',
-      icon: '≡ƒöæ',
+      icon: '🔑',
       highlights: ['crypto.getRandomValues', 'Diceware Passphrases', 'Crack-Time Estimates', '24-Slot History'],
     },
     {
@@ -304,7 +304,7 @@
       difficulty: 'Advanced',
       path: 'projects/20-spendwise/index.html',
       status: 'completed',
-      icon: '≡ƒÆ░',
+      icon: '💰',
       highlights: ['SVG Budget Ring', 'Canvas Donut & Bars', 'Month Navigation', 'CSV Export'],
     },
     {
@@ -319,7 +319,7 @@
       difficulty: 'Intermediate',
       path: 'projects/21-habitforge/index.html',
       status: 'completed',
-      icon: '≡ƒöÑ',
+      icon: '🔥',
       highlights: ['Streak Detection', '18-Week Heatmap', 'XP Level System', 'Custom Icons'],
     },
     {
@@ -334,7 +334,7 @@
       difficulty: 'Intermediate',
       path: 'projects/22-jsonlens/index.html',
       status: 'completed',
-      icon: '≡ƒº¼',
+      icon: '🧬',
       highlights: ['Live Validation', 'Gutter Errors', 'Collapsible Tree', 'Stats Panel'],
     },
     {
@@ -343,13 +343,13 @@
       title: 'RegexLab Playground',
       subtitle: 'Live Pattern Tester & Cheatsheet',
       description:
-        'Interactive regex laboratory with live match highlighting, $1ΓÇô$n group inspector, replace preview, presets and a 20-token cheatsheet.',
+        'Interactive regex laboratory with live match highlighting, $1–$n group inspector, replace preview, presets and a 20-token cheatsheet.',
       category: 'Utilities & Tools',
       tags: ['RegExp Engine', 'Live Highlight', 'Replace Preview', 'Cheatsheet'],
       difficulty: 'Intermediate',
       path: 'projects/23-regexlab/index.html',
       status: 'completed',
-      icon: '≡ƒº¬',
+      icon: '🧪',
       highlights: ['6 Regex Flags', 'Group Inspector', 'Replace Preview', 'Saved Library'],
     },
     {
@@ -364,7 +364,7 @@
       difficulty: 'Intermediate',
       path: 'projects/24-timewarp/index.html',
       status: 'completed',
-      icon: 'ΓÅ│',
+      icon: '⏳',
       highlights: ['15 World Zones', 'Lap Analytics', 'Countdown Ring', 'Audio Alarms'],
     },
     {
@@ -379,7 +379,7 @@
       difficulty: 'Intermediate',
       path: 'projects/25-snippetvault/index.html',
       status: 'completed',
-      icon: '≡ƒùâ∩╕Å',
+      icon: '🗃️',
       highlights: ['Instant Search', 'Lang Filters', 'One-Click Copy', 'JSON Backup'],
     },
     {
@@ -394,7 +394,7 @@
       difficulty: 'Advanced',
       path: 'projects/26-memodeck/index.html',
       status: 'completed',
-      icon: '≡ƒâÅ',
+      icon: '🃏',
       highlights: ['SM-2 Scheduling', '3D Card Flip', '4-Grade Scoring', 'Retention Stats'],
     },
     {
@@ -409,7 +409,7 @@
       difficulty: 'Intermediate',
       path: 'projects/27-choicewheel/index.html',
       status: 'completed',
-      icon: '≡ƒÄí',
+      icon: '🎡',
       highlights: ['Weighted Segments', 'Ease-Out Spin', 'Tick Sounds', 'Confetti Reveal'],
     },
     {
@@ -424,7 +424,7 @@
       difficulty: 'Intermediate',
       path: 'projects/28-invoiceforge/index.html',
       status: 'completed',
-      icon: '≡ƒº╛',
+      icon: '🧾',
       highlights: ['Live Paper Preview', 'Line Items', 'Tax & Discount', 'Print to PDF'],
     },
   ];
@@ -548,7 +548,7 @@
         <div>
           <div class="card-top">
             <div class="card-icon-badge">
-              <span class="project-icon">${proj.icon || '≡ƒÜÇ'}</span>
+              <span class="project-icon">${proj.icon || '🚀'}</span>
               <span class="project-index">#${proj.id}</span>
             </div>
             <span class="status-badge ${statusClass}">${statusLabel}</span>
@@ -590,6 +590,150 @@
 
       projectsGrid.appendChild(card);
     });
+
+    initCardEffects();
+  }
+
+  // --- Card Reveal & Spotlight Micro-Interactions ---
+  function initCardEffects() {
+    const cards = projectsGrid.querySelectorAll('.project-card');
+    if (!cards.length) return;
+
+    // Smooth reveal animation
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.05, rootMargin: '60px' }
+      );
+
+      cards.forEach((card, idx) => {
+        if (idx < 8) {
+          setTimeout(() => card.classList.add('revealed'), idx * 30);
+        } else {
+          observer.observe(card);
+        }
+      });
+    } else {
+      cards.forEach((c) => c.classList.add('revealed'));
+    }
+
+    // Card mouse spotlight & subtle 3D tilt
+    cards.forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const mx = e.clientX - rect.left;
+        const my = e.clientY - rect.top;
+        card.style.setProperty('--mx', `${mx}px`);
+        card.style.setProperty('--my', `${my}px`);
+
+        const dx = (mx / rect.width - 0.5) * 8;
+        const dy = -(my / rect.height - 0.5) * 8;
+        card.style.transform = `perspective(800px) rotateX(${dy.toFixed(2)}deg) rotateY(${dx.toFixed(2)}deg) translateY(-2px)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+  }
+
+  // --- Typewriter Effect ---
+  function initTypewriter() {
+    const el = document.getElementById('heroTypewriter');
+    if (!el) return;
+    const textEl = el.querySelector('.type-text');
+    if (!textEl) return;
+
+    const phrases = [
+      '28 Modular Applications • Pure Vanilla JavaScript (ES6+)',
+      'Zero Runtime Dependencies • 100% Native Web Standards',
+      'Web Audio API Synthesis & Live FFT Visualizers',
+      'Canvas Physics, 2D Graphics & Particle Systems',
+      'Web Crypto API Cryptographic Entropy & Security Tools',
+      'High-Performance DOM, State Machines & LocalStorage',
+    ];
+
+    let phraseIdx = 0;
+    let charIdx = 0;
+    let isDeleting = false;
+    let delay = 60;
+
+    function tick() {
+      const current = phrases[phraseIdx];
+      if (isDeleting) {
+        textEl.textContent = current.substring(0, charIdx - 1);
+        charIdx--;
+        delay = 25;
+      } else {
+        textEl.textContent = current.substring(0, charIdx + 1);
+        charIdx++;
+        delay = 55;
+      }
+
+      if (!isDeleting && charIdx === current.length) {
+        delay = 2400;
+        isDeleting = true;
+      } else if (isDeleting && charIdx === 0) {
+        isDeleting = false;
+        phraseIdx = (phraseIdx + 1) % phrases.length;
+        delay = 350;
+      }
+
+      setTimeout(tick, delay);
+    }
+
+    tick();
+  }
+
+  // --- Ambient Canvas Particles ---
+  function initParticles() {
+    const canvas = document.getElementById('hubParticles');
+    if (!canvas) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const ctx = canvas.getContext('2d');
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    const particles = Array.from({ length: 40 }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      r: Math.random() * 1.5 + 0.6,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      alpha: Math.random() * 0.45 + 0.15,
+    }));
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+      particles.forEach((p) => {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0) p.x = width;
+        if (p.x > width) p.x = 0;
+        if (p.y < 0) p.y = height;
+        if (p.y > height) p.y = 0;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(129, 140, 248, ${p.alpha})`;
+        ctx.fill();
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
   }
 
   // --- Live Preview Modal Logic ---
@@ -700,4 +844,18 @@
   // --- Init ---
   initTheme();
   loadProjects();
+  initTypewriter();
+  initParticles();
+
+  // Random Button listener
+  const btnRandom = document.getElementById('btnRandom');
+  if (btnRandom) {
+    btnRandom.addEventListener('click', () => {
+      const activeProjects = allProjects.filter((p) => p.status === 'completed');
+      if (activeProjects.length > 0) {
+        const rand = activeProjects[Math.floor(Math.random() * activeProjects.length)];
+        openPreview(rand);
+      }
+    });
+  }
 })();

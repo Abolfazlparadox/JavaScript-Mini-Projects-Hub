@@ -18,4 +18,4 @@ yarn-error.log*
 # Temporary files
 *.tmp
 *.log
-*.patch
+.playwright-mcp/

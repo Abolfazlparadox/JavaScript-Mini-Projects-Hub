@@ -12,7 +12,7 @@
 
 <br/>
 
-**An engineering showcase of 28 modular mini-applications and 3 executive personal portfolios built with pure Vanilla JavaScript (ES6+), semantic HTML5, and responsive modern CSS.**
+**An engineering showcase of 18 modular mini-applications and 3 executive personal portfolios built with pure Vanilla JavaScript (ES6+), semantic HTML5, and responsive modern CSS.**
 
 [Explore Live Hub](#-overview) • [Project Catalog](#-project-catalog) • [Engineer Dossier](#-lead-engineer-dossier) • [Architecture](#-repository-architecture) • [Getting Started](#-quick-start)
 
@@ -49,7 +49,7 @@ The repository features an interactive **Central Showcase Hub** (`index.html`) e
 
 ## 🗂️ Project Catalog
 
-### 🌟 Active & Live Applications (28 Completed)
+### 🌟 Active & Live Applications (12 Completed)
 
 | # | Project Name | Category | Key Web Concepts & APIs | Live Path | Status |
 |---|---|---|---|---|---|
@@ -65,22 +65,17 @@ The repository features an interactive **Central Showcase Hub** (`index.html`) e
 | **10** | **Paradox Noir Portfolio** | Portfolios & Showcases | Noir Dark Glassmorphism, Dossier Tabs, Real-time CV Metrics | [`projects/10-portfolio-classic`](projects/10-portfolio-classic/index.html) | 🟢 **Live & Interactive** |
 | **11** | **Paradox Minimalist Dev** | Portfolios & Showcases | Dark/Light Theme Switching, Technical Radar, Production Metrics | [`projects/11-portfolio-modern`](projects/11-portfolio-modern/index.html) | 🟢 **Live & Interactive** |
 | **12** | **Paradox Stellar Executive** | Portfolios & Showcases | HTML5 Canvas Starfield, Particle Physics, Executive Dossier | [`projects/12-portfolio-stellar`](projects/12-portfolio-stellar/index.html) | 🟢 **Live & Interactive** |
-| **13** | **TaskFlow / Grocery Bud** | Utilities & Tools | Persistent CRUD organizer, SVG progress ring, batch cleanup, LocalStorage | [`projects/13-taskflow-crud`](projects/13-taskflow-crud/index.html) | 🟢 **Live & Interactive** |
-| **14** | **BeatPulse Audio Synth** | Media & Canvas | 16-Step Web Audio sequencer, dual synths, lookahead clock, live FFT viz | [`projects/14-beatpulse-synth`](projects/14-beatpulse-synth/index.html) | 🟢 **Live & Interactive** |
-| **15** | **Markdown Live Studio** | Utilities & Tools | Split-pane editor, custom parser, synchronized scrolling, HTML/PDF export | [`projects/15-markdown-studio`](projects/15-markdown-studio/index.html) | 🟢 **Live & Interactive** |
-| **16** | **CryptoPulse Live Ticker** | Utilities & Tools | Live Binance WebSocket+REST stream, offline simulation, canvas sparklines | [`projects/16-cryptopulse`](projects/16-cryptopulse/index.html) | 🟢 **Live & Interactive** |
-| **17** | **KanbanFlow Board** | UI Components | HTML5 Drag and Drop API, dynamic swimlanes, JSON backup & export | [`projects/17-kanbanflow`](projects/17-kanbanflow/index.html) | 🟢 **Live & Interactive** |
-| **18** | **DevTyping Speed Benchmark** | State & Logic | Developer WPM speed & accuracy benchmark with real code & heatmap | [`projects/18-devtyping-test`](projects/18-devtyping-test/index.html) | 🟢 **Live & Interactive** |
-| **19** | **PassForge Studio** | Utilities & Tools | Web Crypto API random values, entropy analysis, crack-time estimates | [`projects/19-passforge`](projects/19-passforge/index.html) | 🟢 **Live & Interactive** |
-| **20** | **SpendWise Tracker** | State & Logic | Personal budget analytics, SVG budget ring, Canvas charts, CSV export | [`projects/20-spendwise`](projects/20-spendwise/index.html) | 🟢 **Live & Interactive** |
-| **21** | **HabitForge Tracker** | State & Logic | Habit streak engine, 18-week heatmap, XP gamification, completion grids | [`projects/21-habitforge`](projects/21-habitforge/index.html) | 🟢 **Live & Interactive** |
-| **22** | **JSONLens Studio** | Utilities & Tools | Interactive JSON formatter, live error gutter, collapsible tree explorer | [`projects/22-jsonlens`](projects/22-jsonlens/index.html) | 🟢 **Live & Interactive** |
-| **23** | **RegexLab Playground** | Utilities & Tools | Real-time regex testing, group inspector, replace preview, cheatsheet | [`projects/23-regexlab`](projects/23-regexlab/index.html) | 🟢 **Live & Interactive** |
-| **24** | **TimeWarp Console** | Utilities & Tools | 15 IANA world clocks, centisecond lap stopwatch, Web Audio timer ring | [`projects/24-timewarp`](projects/24-timewarp/index.html) | 🟢 **Live & Interactive** |
-| **25** | **SnippetVault Manager** | Utilities & Tools | Code snippet library with search, language filters, one-click copy | [`projects/25-snippetvault`](projects/25-snippetvault/index.html) | 🟢 **Live & Interactive** |
-| **26** | **MemoDeck Flashcards** | State & Logic | Spaced repetition (SM-2 lite), 3D flip study mode, retention analytics | [`projects/26-memodeck`](projects/26-memodeck/index.html) | 🟢 **Live & Interactive** |
-| **27** | **ChoiceWheel Spinner** | Media & Canvas | Canvas decision wheel, weighted segments, physics sound, confetti reveal | [`projects/27-choicewheel`](projects/27-choicewheel/index.html) | 🟢 **Live & Interactive** |
-| **28** | **InvoiceForge Generator** | Utilities & Tools | Print-ready invoice studio, line items math, tax/discounts, PDF export | [`projects/28-invoiceforge`](projects/28-invoiceforge/index.html) | 🟢 **Live & Interactive** |
+
+### 🚀 Roadmap Applications (6 In Development)
+
+| # | Project Name | Category | Planned Architecture & Concepts | Target Status |
+|---|---|---|---|---|
+| **13** | **TaskFlow / Grocery Bud** | Utilities & Tools | Persistent CRUD organizer, inline edit, batch cleanup, LocalStorage | 🟡 *Roadmap* |
+| **14** | **BeatPulse Audio Synth** | Media & Canvas | Web Audio API step sequencer, oscillator waveforms, live FFT visualizer | 🟡 *Roadmap* |
+| **15** | **Markdown Live Studio** | Utilities & Tools | Split-pane editor, synchronized scrolling, live HTML/PDF export | 🟡 *Roadmap* |
+| **16** | **CryptoPulse Live Ticker** | Utilities & Tools | High-frequency live WebSocket market stream, canvas micro sparklines | 🟡 *Roadmap* |
+| **17** | **KanbanFlow Board** | UI Components | HTML5 Drag and Drop API, dynamic swimlanes, JSON backup & export | 🟡 *Roadmap* |
+| **18** | **DevTyping Speed Benchmark** | State & Logic | Developer WPM speed & accuracy benchmark with code snippets & heatmap | 🟡 *Roadmap* |
 
 ---
 
@@ -93,9 +88,8 @@ JavaScript Mini Projects Hub/
 ├── index.html                     # Central Showcase Hub & Dashboard
 ├── hub.css                        # Glassmorphic UI design tokens (Dark & Light)
 ├── hub.js                         # Hub controller (Search, filters, modal preview)
-├── projects.json                  # Central metadata registry for all 28 mini-apps
+├── projects.json                  # Central metadata registry for all 18 mini-apps
 ├── package.json                   # Project metadata and quick-start scripts
-├── serve.json                     # Local server routing & caching configuration
 ├── .gitignore                     # Clean repository ignores
 ├── README.md                      # Authoritative repository documentation
 │
@@ -118,26 +112,16 @@ JavaScript Mini Projects Hub/
     ├── 07-auth-portal/            # AuthCraft 3-in-1 Authentication Portal
     ├── 08-social-network/         # SocialSphere Feed & Stories
     ├── 09-travel-explorer/        # Wanderlust Travel Expeditions
-    ├── 10-portfolio-classic/      # Paradox Noir Dark Portfolio
-    ├── 11-portfolio-modern/       # Paradox Minimalist Dev Portfolio
-    ├── 12-portfolio-stellar/      # Paradox Stellar Executive Portfolio
-    ├── 13-taskflow-crud/          # TaskFlow Persistent CRUD Organizer
-    ├── 14-beatpulse-synth/        # BeatPulse Web Audio Drum Machine & Sequencer
-    ├── 15-markdown-studio/        # Markdown Live Split-Pane Editor
-    ├── 16-cryptopulse/            # CryptoPulse Real-Time Market Ticker
-    ├── 17-kanbanflow/             # KanbanFlow Drag & Drop Agile Board
-    ├── 18-devtyping-test/         # DevTyping Code Speed Benchmark
-    ├── 19-passforge/              # PassForge Credential & Passphrase Studio
-    ├── 20-spendwise/              # SpendWise Personal Expense & Budget Tracker
-    ├── 21-habitforge/             # HabitForge Streak Engine & Habit Analytics
-    ├── 22-jsonlens/               # JSONLens Formatter, Validator & Tree Explorer
-    ├── 23-regexlab/               # RegexLab Live Pattern Tester & Cheatsheet
-    ├── 24-timewarp/               # TimeWarp World Clock, Stopwatch & Countdown
-    ├── 25-snippetvault/           # SnippetVault Developer Code Snippets Library
-    ├── 26-memodeck/               # MemoDeck Spaced-Repetition Study Flashcards
-    ├── 27-choicewheel/            # ChoiceWheel Weighted Decision Wheel
-    ├── 28-invoiceforge/           # InvoiceForge Professional Invoice Generator
-    └── template/                  # Standard Scaffolding for new projects (#29+)
+├── 10-portfolio-classic/      # Paradox Noir Dark Portfolio
+├── 11-portfolio-modern/       # Paradox Minimalist Dev Portfolio
+├── 12-portfolio-stellar/      # Paradox Stellar Executive Portfolio
+├── 13-taskflow-crud/          # TaskFlow Persistent CRUD Organizer
+├── 14-beatpulse-synth/        # BeatPulse Web Audio Drum Machine & Sequencer
+├── 15-markdown-studio/        # Markdown Live Split-Pane Editor
+├── 16-cryptopulse/            # CryptoPulse Real-Time Market Ticker
+├── 17-kanbanflow/             # KanbanFlow Drag & Drop Agile Board
+├── 18-devtyping-test/         # DevTyping Code Speed Benchmark
+└── template/                  # Standard Scaffolding for new projects (#19+)
 ```
 
 ---

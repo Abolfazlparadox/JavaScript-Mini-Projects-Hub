@@ -1,12 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Paradox CodeLab ΓÇó JavaScript & Systems Suite | Abolfazl Mohammadshahi</title>
+    <title>Paradox CodeLab • JavaScript & Systems Suite | Abolfazl Mohammadshahi</title>
     <meta
       name="description"
-      content="Paradox CodeLab ΓÇö A curated engineering showcase of 28 modular mini-apps and 3 personal portfolios built with pure Vanilla JavaScript (ES6+), semantic HTML5, and responsive CSS by Abolfazl Mohammadshahi (Paradox)."
+      content="Paradox CodeLab — A curated engineering showcase of 28 modular mini-apps and 3 personal portfolios built with pure Vanilla JavaScript (ES6+), semantic HTML5, and responsive CSS by Abolfazl Mohammadshahi (Paradox)."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,6 +18,9 @@
     <link rel="icon" type="image/jpeg" href="Assets/img/paradox/paradox-headshot.jpg" />
   </head>
   <body>
+    <!-- Background Ambient Particles -->
+    <canvas class="hub-particles" id="hubParticles" aria-hidden="true"></canvas>
+
     <!-- Background Ambient Glow -->
     <div class="ambient-glow glow-1"></div>
     <div class="ambient-glow glow-2"></div>
@@ -97,6 +100,15 @@
           A high-precision showcase of focused, modular mini-applications and executive portfolios built with pure JavaScript (ES6+), clean semantic HTML5, and responsive modern CSS. Zero runtime overhead, 100% native web APIs.
         </p>
 
+        <!-- Live Typewriter & Status -->
+        <div class="hero-typewriter" id="heroTypewriter" aria-live="polite">
+          <span class="type-text"></span><span class="type-caret" aria-hidden="true">|</span>
+        </div>
+        <div class="hero-live-row">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span>System Status: 28 Modular Apps Verified & Production Ready</span>
+        </div>
+
         <!-- Quick Stats Grid -->
         <div class="stats-ribbon">
           <div class="stat-card">
@@ -134,15 +146,15 @@
                 <span class="author-alias-tag">@Paradox</span>
               </div>
               <p class="author-title">
-                Software Engineer ΓÇó Python & Django Backend Specialist ΓÇó Modular Monoliths
+                Software Engineer • Python & Django Backend Specialist • Modular Monoliths
               </p>
               <p class="author-academics">
-                ≡ƒÄô <strong>M.Sc. in Computer Engineering</strong> (Software Eng.), K. N. Toosi University of Technology (GPA: <strong>18.50</strong>)
-                ΓÇó <strong>B.Sc.</strong> (GPA: <strong>18.49</strong>)
+                🎓 <strong>M.Sc. in Computer Engineering</strong> (Software Eng.), K. N. Toosi University of Technology (GPA: <strong>18.50</strong>)
+                • <strong>B.Sc.</strong> (GPA: <strong>18.49</strong>)
               </p>
               <div class="author-badges-row">
-                <span class="author-badge-chip highlight">Γ£ô 190+ Automated Tests Passed</span>
-                <span class="author-badge-chip highlight">Γ£ô CS50 Certified (Harvard)</span>
+                <span class="author-badge-chip highlight">✓ 190+ Automated Tests Passed</span>
+                <span class="author-badge-chip highlight">✓ CS50 Certified (Harvard)</span>
                 <span class="author-badge-chip">High-Concurrency Backend</span>
                 <span class="author-badge-chip">PostgreSQL (Zero N+1)</span>
                 <span class="author-badge-chip">Redis & Celery</span>
@@ -150,13 +162,13 @@
               </div>
               <div class="author-actions-row">
                 <a href="projects/10-portfolio-classic/index.html" class="author-portfolio-btn featured">
-                  <span>≡ƒò╢∩╕Å Noir Portfolio</span>
+                  <span>🕶️ Noir Portfolio</span>
                 </a>
                 <a href="projects/11-portfolio-modern/index.html" class="author-portfolio-btn">
-                  <span>≡ƒÆ╗ Minimalist Dev</span>
+                  <span>💻 Minimalist Dev</span>
                 </a>
                 <a href="projects/12-portfolio-stellar/index.html" class="author-portfolio-btn">
-                  <span>≡ƒîî Stellar Executive</span>
+                  <span>🌌 Stellar Executive</span>
                 </a>
                 <a href="https://github.com/AbolfazlParadox" target="_blank" rel="noopener noreferrer" class="author-portfolio-btn" title="GitHub Profile">
                   <span>GitHub</span>
@@ -173,7 +185,7 @@
       <!-- Tech marquee strip -->
       <div class="tech-marquee" aria-hidden="true">
         <div class="tech-marquee-track" id="marqueeTrack">
-          <span>Vanilla ES6+</span><span>ΓÇó</span><span>Web Audio API</span><span>ΓÇó</span><span>Canvas Physics</span><span>ΓÇó</span><span>LocalStorage</span><span>ΓÇó</span><span>Web Crypto</span><span>ΓÇó</span><span>Drag & Drop</span><span>ΓÇó</span><span>WebSockets</span><span>ΓÇó</span><span>Intl API</span><span>ΓÇó</span><span>Clipboard API</span><span>ΓÇó</span><span>Geolocation</span><span>ΓÇó</span><span>Zero Dependencies</span><span>ΓÇó</span>
+          <span>Vanilla ES6+</span><span>•</span><span>Web Audio API</span><span>•</span><span>Canvas Physics</span><span>•</span><span>LocalStorage</span><span>•</span><span>Web Crypto</span><span>•</span><span>Drag & Drop</span><span>•</span><span>WebSockets</span><span>•</span><span>Intl API</span><span>•</span><span>Clipboard API</span><span>•</span><span>Geolocation</span><span>•</span><span>Zero Dependencies</span><span>•</span><span>Vanilla ES6+</span><span>•</span><span>Web Audio API</span><span>•</span><span>Canvas Physics</span><span>•</span><span>LocalStorage</span><span>•</span><span>Web Crypto</span><span>•</span><span>Drag & Drop</span><span>•</span><span>WebSockets</span><span>•</span><span>Intl API</span><span>•</span><span>Clipboard API</span><span>•</span><span>Geolocation</span><span>•</span><span>Zero Dependencies</span><span>•</span>
         </div>
       </div>
 
@@ -191,12 +203,12 @@
             placeholder="Search projects by title, tags, or concepts... (Ctrl + K)"
             autocomplete="off"
           />
-          <button class="clear-search-btn hidden" id="clearSearchBtn" title="Clear Search">Γ£ò</button>
+          <button class="clear-search-btn hidden" id="clearSearchBtn" title="Clear Search">✕</button>
         </div>
 
         <div class="filter-pills-row" id="categoryPills">
           <button class="pill-btn active" data-filter="all">All Projects</button>
-          <button class="pill-btn" data-filter="active">≡ƒƒó Active / Live</button>
+          <button class="pill-btn" data-filter="active">🟢 Active / Live</button>
           <button class="pill-btn" data-filter="Portfolios & Showcases">Portfolios</button>
           <button class="pill-btn" data-filter="DOM & Visuals">DOM & Visuals</button>
           <button class="pill-btn" data-filter="UI Components">UI Components</button>
@@ -210,6 +222,9 @@
       <section class="projects-section">
         <div class="section-meta-header">
           <span class="results-count" id="resultsCount">Showing all projects</span>
+          <button class="btn-random" id="btnRandom" title="Launch a random project" aria-label="Random project">
+            <span>🎲 Surprise Me</span>
+          </button>
         </div>
 
         <div class="projects-grid" id="projectsGrid">
@@ -218,7 +233,7 @@
 
         <!-- No Results Fallback -->
         <div class="no-results hidden" id="noResultsBlock">
-          <span class="empty-icon">≡ƒöì</span>
+          <span class="empty-icon">🔍</span>
           <h3>No matching projects found</h3>
           <p>Try searching with a different keyword or reset the category filters.</p>
           <button class="btn-reset-filters" id="btnResetFilters">Reset Filters</button>
@@ -273,7 +288,7 @@
                 <line x1="10" y1="14" x2="21" y2="3"></line>
               </svg>
             </a>
-            <button class="preview-action-btn close-btn" id="btnClosePreview" title="Close (Esc)">Γ£ò</button>
+            <button class="preview-action-btn close-btn" id="btnClosePreview" title="Close (Esc)">✕</button>
           </div>
         </div>
 
@@ -288,7 +303,7 @@
       <div class="guide-modal-window">
         <div class="modal-header">
           <h3>How to Add a New Mini Project</h3>
-          <button class="btn-close-modal" id="btnCloseGuide">Γ£ò</button>
+          <button class="btn-close-modal" id="btnCloseGuide">✕</button>
         </div>
         <div class="modal-body">
           <ol class="guide-steps">
@@ -321,7 +336,7 @@
       <div class="footer-container">
         <div class="footer-left">
           <p>
-            Architected & Built by <strong>Abolfazl Mohammadshahi (Paradox)</strong> ΓÇó Senior Software Engineer
+            Architected & Built by <strong>Abolfazl Mohammadshahi (Paradox)</strong> • Senior Software Engineer
           </p>
           <p class="footer-sub">High-concurrency backend systems & clean Vanilla JavaScript engineering showcase.</p>
         </div>

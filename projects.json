@@ -1,10 +1,10 @@
-﻿[
+[
   {
     "id": "01",
     "slug": "01-color-flipper",
     "title": "ChromaCraft Studio",
     "subtitle": "Advanced Color & Gradient Flipper",
-    "description": "An interactive color studio with solid HEX/RGB/HSL generation, 360┬░ gradient controls, WCAG contrast checking, and Web Audio API synthesis.",
+    "description": "An interactive color studio with solid HEX/RGB/HSL generation, 360° gradient controls, WCAG contrast checking, and Web Audio API synthesis.",
     "category": "DOM & Visuals",
     "tags": [
       "DOM Manipulation",
@@ -16,9 +16,9 @@
     "difficulty": "Intermediate",
     "path": "projects/01-color-flipper/index.html",
     "status": "completed",
-    "icon": "≡ƒÄ¿",
+    "icon": "🎨",
     "highlights": [
-      "360┬░ Angle Dial",
+      "360° Angle Dial",
       "WCAG Luminance Engine",
       "Palette Harmonies",
       "Sound Synthesis"
@@ -41,7 +41,7 @@
     "difficulty": "Intermediate",
     "path": "projects/02-calculator/index.html",
     "status": "completed",
-    "icon": "≡ƒöó",
+    "icon": "🔢",
     "highlights": [
       "Safe Math Engine",
       "History Tape",
@@ -66,11 +66,11 @@
     "difficulty": "Intermediate",
     "path": "projects/03-weather-app/index.html",
     "status": "completed",
-    "icon": "≡ƒîñ∩╕Å",
+    "icon": "🌤️",
     "highlights": [
       "Dual API & Mock Engine",
       "5-Day Forecast",
-      "┬░C / ┬░F Switcher",
+      "°C / °F Switcher",
       "Geolocation"
     ]
   },
@@ -91,7 +91,7 @@
     "difficulty": "Intermediate",
     "path": "projects/04-testimonial-slider/index.html",
     "status": "completed",
-    "icon": "≡ƒÆ¼",
+    "icon": "💬",
     "highlights": [
       "SVG Progress Ring",
       "Touch Gestures",
@@ -115,7 +115,7 @@
     "difficulty": "Intermediate",
     "path": "projects/05-circular-progress/index.html",
     "status": "completed",
-    "icon": "ΓÅ▒∩╕Å",
+    "icon": "⏱️",
     "highlights": [
       "Interactive Slider",
       "Pomodoro Timer",
@@ -139,7 +139,7 @@
     "difficulty": "Beginner / Intermediate",
     "path": "projects/06-image-gallery/index.html",
     "status": "completed",
-    "icon": "≡ƒû╝∩╕Å",
+    "icon": "🖼️",
     "highlights": [
       "Fullscreen Lightbox",
       "Filmstrip Strip",
@@ -163,7 +163,7 @@
     "difficulty": "Intermediate",
     "path": "projects/07-auth-portal/index.html",
     "status": "completed",
-    "icon": "≡ƒöÉ",
+    "icon": "🔐",
     "highlights": [
       "3-in-1 Sliding Tabs",
       "Password Strength Meter",
@@ -187,7 +187,7 @@
     "difficulty": "Intermediate",
     "path": "projects/08-social-network/index.html",
     "status": "completed",
-    "icon": "≡ƒîÉ",
+    "icon": "🌐",
     "highlights": [
       "Post Creation",
       "Live Comments Drawer",
@@ -211,7 +211,7 @@
     "difficulty": "Intermediate",
     "path": "projects/09-travel-explorer/index.html",
     "status": "completed",
-    "icon": "≡ƒù║∩╕Å",
+    "icon": "🗺️",
     "highlights": [
       "Destination Filtering",
       "Tour Booking Modal",
@@ -236,7 +236,7 @@
     "difficulty": "Advanced",
     "path": "projects/10-portfolio-classic/index.html",
     "status": "completed",
-    "icon": "≡ƒò╢∩╕Å",
+    "icon": "🕶️",
     "highlights": [
       "Noir Dark Glassmorphism",
       "Dossier Tabs (CV/Experience)",
@@ -261,7 +261,7 @@
     "difficulty": "Advanced",
     "path": "projects/11-portfolio-modern/index.html",
     "status": "completed",
-    "icon": "≡ƒÆ╗",
+    "icon": "💻",
     "highlights": [
       "Dark & Light Mode Switcher",
       "Technical Capabilities Grid",
@@ -286,7 +286,7 @@
     "difficulty": "Advanced",
     "path": "projects/12-portfolio-stellar/index.html",
     "status": "completed",
-    "icon": "≡ƒîî",
+    "icon": "🌌",
     "highlights": [
       "HTML5 Canvas Starfield",
       "Interactive Mouse Physics",
@@ -310,7 +310,7 @@
     "difficulty": "Intermediate",
     "path": "projects/13-taskflow-crud/index.html",
     "status": "completed",
-    "icon": "≡ƒô¥",
+    "icon": "📝",
     "highlights": [
       "Full CRUD Operations",
       "LocalStorage Persistence",
@@ -333,7 +333,7 @@
     "difficulty": "Advanced",
     "path": "projects/14-beatpulse-synth/index.html",
     "status": "completed",
-    "icon": "≡ƒÄ╣",
+    "icon": "🎹",
     "highlights": [
       "Step Sequencer Grid",
       "Oscillator Controls",
@@ -357,7 +357,7 @@
     "difficulty": "Intermediate",
     "path": "projects/15-markdown-studio/index.html",
     "status": "completed",
-    "icon": "≡ƒôæ",
+    "icon": "📑",
     "highlights": [
       "Dual-Pane Sync Scroll",
       "Custom Markdown Parser",
@@ -381,7 +381,7 @@
     "difficulty": "Advanced",
     "path": "projects/16-cryptopulse/index.html",
     "status": "completed",
-    "icon": "≡ƒôê",
+    "icon": "📈",
     "highlights": [
       "Live WebSocket Stream",
       "Canvas Micro-Charts",
@@ -405,7 +405,7 @@
     "difficulty": "Intermediate",
     "path": "projects/17-kanbanflow/index.html",
     "status": "completed",
-    "icon": "≡ƒôï",
+    "icon": "📋",
     "highlights": [
       "HTML5 Drag & Drop",
       "Dynamic Columns",
@@ -429,7 +429,7 @@
     "difficulty": "Intermediate",
     "path": "projects/18-devtyping-test/index.html",
     "status": "completed",
-    "icon": "ΓÜí",
+    "icon": "⚡",
     "highlights": [
       "Real Code Snippets",
       "Live WPM & Accuracy Calc",
@@ -453,7 +453,7 @@
     "difficulty": "Intermediate",
     "path": "projects/19-passforge/index.html",
     "status": "completed",
-    "icon": "≡ƒöæ",
+    "icon": "🔑",
     "highlights": [
       "crypto.getRandomValues",
       "Diceware Passphrases",
@@ -477,7 +477,7 @@
     "difficulty": "Advanced",
     "path": "projects/20-spendwise/index.html",
     "status": "completed",
-    "icon": "≡ƒÆ░",
+    "icon": "💰",
     "highlights": [
       "SVG Budget Ring",
       "Canvas Donut & Bars",
@@ -501,7 +501,7 @@
     "difficulty": "Intermediate",
     "path": "projects/21-habitforge/index.html",
     "status": "completed",
-    "icon": "≡ƒöÑ",
+    "icon": "🔥",
     "highlights": [
       "Streak Detection",
       "18-Week Heatmap",
@@ -525,7 +525,7 @@
     "difficulty": "Intermediate",
     "path": "projects/22-jsonlens/index.html",
     "status": "completed",
-    "icon": "≡ƒº¼",
+    "icon": "🧬",
     "highlights": [
       "Live Validation",
       "Gutter Errors",
@@ -538,7 +538,7 @@
     "slug": "23-regexlab",
     "title": "RegexLab Playground",
     "subtitle": "Live Pattern Tester & Cheatsheet",
-    "description": "Interactive regex laboratory with live match highlighting, $1ΓÇô$n group inspector, replace preview, presets and a 20-token cheatsheet.",
+    "description": "Interactive regex laboratory with live match highlighting, $1–$n group inspector, replace preview, presets and a 20-token cheatsheet.",
     "category": "Utilities & Tools",
     "tags": [
       "RegExp Engine",
@@ -549,7 +549,7 @@
     "difficulty": "Intermediate",
     "path": "projects/23-regexlab/index.html",
     "status": "completed",
-    "icon": "≡ƒº¬",
+    "icon": "🧪",
     "highlights": [
       "6 Regex Flags",
       "Group Inspector",
@@ -573,7 +573,7 @@
     "difficulty": "Intermediate",
     "path": "projects/24-timewarp/index.html",
     "status": "completed",
-    "icon": "ΓÅ│",
+    "icon": "⏳",
     "highlights": [
       "15 World Zones",
       "Lap Analytics",
@@ -597,7 +597,7 @@
     "difficulty": "Intermediate",
     "path": "projects/25-snippetvault/index.html",
     "status": "completed",
-    "icon": "≡ƒùâ∩╕Å",
+    "icon": "🗃️",
     "highlights": [
       "Instant Search",
       "Lang Filters",
@@ -621,7 +621,7 @@
     "difficulty": "Advanced",
     "path": "projects/26-memodeck/index.html",
     "status": "completed",
-    "icon": "≡ƒâÅ",
+    "icon": "🃏",
     "highlights": [
       "SM-2 Scheduling",
       "3D Card Flip",
@@ -645,7 +645,7 @@
     "difficulty": "Intermediate",
     "path": "projects/27-choicewheel/index.html",
     "status": "completed",
-    "icon": "≡ƒÄí",
+    "icon": "🎡",
     "highlights": [
       "Weighted Segments",
       "Ease-Out Spin",
@@ -669,7 +669,7 @@
     "difficulty": "Intermediate",
     "path": "projects/28-invoiceforge/index.html",
     "status": "completed",
-    "icon": "≡ƒº╛",
+    "icon": "🧾",
     "highlights": [
       "Live Paper Preview",
       "Line Items",
