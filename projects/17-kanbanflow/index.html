@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KanbanFlow Board | Drag & Drop Agile Board</title>
+    <meta
+      name="description"
+      content="Interactive agile kanban board with native HTML5 drag & drop, custom swimlanes, priorities, tags, due dates and JSON backup."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="kb-header">
+      <div class="header-left">
+        <a href="../../index.html" class="nav-hub-btn" title="Return to Projects Hub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Hub</span>
+        </a>
+        <div class="brand">
+          <span class="brand-badge">#17</span>
+          <span class="brand-title">KanbanFlow Board</span>
+        </div>
+      </div>
+      <div class="header-right">
+        <button class="hdr-btn" id="btnAddColumn" title="Add column (C)">＋ Column</button>
+        <button class="hdr-btn" id="btnAddCard" title="New card (N)">＋ Card</button>
+        <button class="icon-btn" id="btnExport" title="Export board JSON">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+        </button>
+        <button class="icon-btn" id="btnImport" title="Import board JSON">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="17 8 12 3 7 8"></polyline>
+            <line x1="12" y1="3" x2="12" y2="15"></line>
+          </svg>
+        </button>
+        <input type="file" id="importFile" accept="application/json" class="hidden" />
+      </div>
+    </header>
+
+    <div class="kb-toolbar">
+      <div class="search-wrap">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Search cards... ( / )" autocomplete="off" />
+      </div>
+      <select id="filterPriority" class="field field-sm" title="Filter by priority">
+        <option value="all">All priorities</option>
+        <option value="low">🟢 Low</option>
+        <option value="medium">🟡 Medium</option>
+        <option value="high">🔴 High</option>
+      </select>
+      <div class="progress-wrap" title="Done / Total">
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+        <span class="progress-label" id="progressLabel">0%</span>
+      </div>
+      <button class="btn-ghost danger" id="btnReset" title="Reset board to sample data">Reset</button>
+    </div>
+
+    <main class="kb-stage">
+      <div class="board" id="board"></div>
+    </main>
+
+    <!-- Card modal -->
+    <div class="modal-overlay hidden" id="cardModal">
+      <div class="modal-window glass-card" role="dialog" aria-modal="true" aria-label="Card editor">
+        <div class="modal-header">
+          <h3 id="cardModalTitle">＋ New Card</h3>
+          <button class="btn-close" id="btnCloseCard">✕</button>
+        </div>
+        <div class="modal-body">
+          <label class="lbl">Title<input type="text" id="cardTitle" class="field" maxlength="120" placeholder="e.g. Implement login API" /></label>
+          <label class="lbl">Description<textarea id="cardDesc" class="field" rows="3" maxlength="600" placeholder="Details, acceptance criteria..."></textarea></label>
+          <div class="modal-row">
+            <label class="lbl">Column<select id="cardColumn" class="field"></select></label>
+            <label class="lbl">Priority
+              <select id="cardPriority" class="field">
+                <option value="low">🟢 Low</option>
+                <option value="medium" selected>🟡 Medium</option>
+                <option value="high">🔴 High</option>
+              </select>
+            </label>
+          </div>
+          <div class="modal-row">
+            <label class="lbl">Tags (comma separated)<input type="text" id="cardTags" class="field" maxlength="80" placeholder="backend, api" /></label>
+            <label class="lbl">Due date<input type="date" id="cardDue" class="field" /></label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-ghost danger hidden" id="btnDeleteCard">Delete</button>
+          <div>
+            <button class="btn-ghost" id="btnCancelCard">Cancel</button>
+            <button class="btn-primary" id="btnSaveCard">Save card</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column modal -->
+    <div class="modal-overlay hidden" id="colModal">
+      <div class="modal-window glass-card small" role="dialog" aria-modal="true" aria-label="Column editor">
+        <div class="modal-header">
+          <h3 id="colModalTitle">＋ New Column</h3>
+          <button class="btn-close" id="btnCloseCol">✕</button>
+        </div>
+        <div class="modal-body">
+          <label class="lbl">Title<input type="text" id="colTitle" class="field" maxlength="40" placeholder="e.g. In Review" /></label>
+          <div class="lbl">Color
+            <div class="color-pick" id="colorPick"></div>
+          </div>
+        </div>
+        <div class="modal-footer end">
+          <button class="btn-ghost" id="btnCancelCol">Cancel</button>
+          <button class="btn-primary" id="btnSaveCol">Save column</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column menu (context popover) -->
+    <div class="col-menu hidden" id="colMenu">
+      <button data-colact="rename">✏️ Rename</button>
+      <button data-colact="left">⬅ Move left</button>
+      <button data-colact="right">➡ Move right</button>
+      <button data-colact="clear">🧹 Clear cards</button>
+      <button data-colact="delete" class="danger">🗑 Delete column</button>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -35,6 +35,9 @@
   --shadow-subtle: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
   --shadow-modal: 0 25px 60px -15px rgba(0, 0, 0, 0.75);
 
+  --card-bg: var(--bg-card);
+  --transition-medium: var(--transition-normal);
+
   --transition-fast: 0.15s ease;
   --transition-normal: 0.25s ease;
 }

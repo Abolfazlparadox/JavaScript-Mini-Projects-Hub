@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BeatPulse Synth | Web Audio Drum Machine & Sequencer</title>
+    <meta
+      name="description"
+      content="In-browser 16-step drum machine & melodic sequencer powered by Web Audio API synthesis, with BPM clock, swing, filters, presets and live FFT visualizer."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="synth-header">
+      <div class="header-left">
+        <a href="../../index.html" class="nav-hub-btn" title="Return to Projects Hub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Hub</span>
+        </a>
+        <div class="brand">
+          <span class="brand-badge">#14</span>
+          <span class="brand-title">BeatPulse Synth</span>
+        </div>
+      </div>
+      <div class="header-right">
+        <button class="icon-btn" id="btnSave" title="Save pattern to browser (Ctrl+S)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+            <polyline points="17 21 17 13 7 13 7 21"></polyline>
+            <polyline points="7 3 7 8 15 8"></polyline>
+          </svg>
+        </button>
+        <button class="icon-btn" id="btnShortcuts" title="Keyboard shortcuts (?)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+            <path d="M6 8h.001M10 8h.001M14 8h.001M18 8h.001M7 16h10"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="synth-stage">
+      <div class="synth-shell">
+        <!-- Transport -->
+        <section class="glass-card transport" aria-label="Transport controls">
+          <div class="transport-btns">
+            <button class="btn-play" id="btnPlay" title="Play / Pause (Space)">
+              <svg id="iconPlay" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+              <svg id="iconPause" class="hidden" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="4" width="5" height="16" rx="1"></rect><rect x="14" y="4" width="5" height="16" rx="1"></rect></svg>
+            </button>
+            <button class="btn-stop" id="btnStop" title="Stop (S)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="5" width="14" height="14" rx="2"></rect></svg>
+            </button>
+            <button class="btn-tap" id="btnTap" title="Tap tempo (T)">TAP</button>
+          </div>
+          <div class="knob-group">
+            <label>BPM <strong id="bpmVal">120</strong>
+              <input type="range" id="bpmSlider" min="60" max="200" value="120" />
+            </label>
+            <label>Swing <strong id="swingVal">0%</strong>
+              <input type="range" id="swingSlider" min="0" max="50" value="0" />
+            </label>
+            <label>Volume <strong id="volVal">80%</strong>
+              <input type="range" id="volSlider" min="0" max="100" value="80" />
+            </label>
+          </div>
+          <div class="step-dots" id="stepDots" aria-label="Step position"></div>
+        </section>
+
+        <!-- Visualizer -->
+        <section class="glass-card viz-card" aria-label="Live audio visualizer">
+          <canvas id="vizCanvas"></canvas>
+          <div class="viz-overlay" id="vizOverlay">▶ Press Play to start the engine</div>
+        </section>
+
+        <!-- Sequencer grid -->
+        <section class="glass-card seq-card" aria-label="Step sequencer">
+          <div class="seq-head">
+            <h2>16-Step Sequencer</h2>
+            <span class="seq-hint">Click cells to toggle • M mute track • speaker preview</span>
+          </div>
+          <div class="seq-scroll">
+            <div class="seq-grid" id="seqGrid"></div>
+          </div>
+        </section>
+
+        <!-- Synth + presets -->
+        <section class="bottom-grid">
+          <div class="glass-card synth-card" aria-label="Melodic synth controls">
+            <h2>🎛 Melodic Synth <span class="sub">(Bass + Lead)</span></h2>
+            <div class="synth-controls">
+              <label>Waveform
+                <select id="waveSelect" class="field">
+                  <option value="sawtooth">Sawtooth</option>
+                  <option value="square">Square</option>
+                  <option value="triangle">Triangle</option>
+                  <option value="sine">Sine</option>
+                </select>
+              </label>
+              <label>Cutoff <strong id="cutoffVal">1800 Hz</strong>
+                <input type="range" id="cutoffSlider" min="200" max="8000" value="1800" />
+              </label>
+              <label>Resonance <strong id="resoVal">6</strong>
+                <input type="range" id="resoSlider" min="0" max="20" value="6" />
+              </label>
+              <label>Scale
+                <select id="scaleSelect" class="field">
+                  <option value="minor">A Minor Pentatonic</option>
+                  <option value="major">C Major</option>
+                  <option value="phrygian">E Phrygian</option>
+                  <option value="blues">A Blues</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div class="glass-card preset-card" aria-label="Pattern presets">
+            <h2>🎼 Patterns</h2>
+            <div class="preset-grid">
+              <button class="preset-btn" data-preset="house">🏠 House</button>
+              <button class="preset-btn" data-preset="hiphop">🎤 Hip-Hop</button>
+              <button class="preset-btn" data-preset="techno">🤖 Techno</button>
+              <button class="preset-btn" data-preset="dnb">🥁 DnB</button>
+              <button class="preset-btn accent" id="btnRandom">🎲 Random</button>
+              <button class="preset-btn danger" id="btnClear">🧹 Clear</button>
+            </div>
+            <p class="preset-note">Patterns auto-save to your browser. Press <kbd>Space</kbd> to play.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div class="modal-overlay hidden" id="shortcutsModal">
+      <div class="modal-window glass-card small">
+        <div class="modal-header"><h3>⌨️ Shortcuts</h3><button class="btn-close" id="btnCloseShortcuts">✕</button></div>
+        <div class="modal-body">
+          <ul class="shortcuts-list">
+            <li><span>Play / Pause</span><kbd>Space</kbd></li>
+            <li><span>Stop</span><kbd>S</kbd></li>
+            <li><span>Tap tempo</span><kbd>T</kbd></li>
+            <li><span>Random pattern</span><kbd>R</kbd></li>
+            <li><span>Save pattern</span><kbd>Ctrl + S</kbd></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
