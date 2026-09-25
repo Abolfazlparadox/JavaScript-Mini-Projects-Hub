@@ -1,0 +1,41 @@
+# Dependencies & Package Managers
+node_modules/
+node_modules/**
+bun.lockb
+bun.lock
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Git & Repository metadata
+.git/
+.git/**
+.gitignore
+.gitattributes
+.github/
+.github/**
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Testing & MCP
+.playwright-mcp/
+.playwright-mcp/**
+
+# Cloudflare & Wrangler files
+.wrangler/
+.wrangler/**
+wrangler.jsonc
+wrangler.json
+wrangler.toml
+
+# Project source/meta files not needed as public static assets
+*.patch
+*.tmp
+*.log
+README.md
+package.json
+serve.json
