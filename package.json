@@ -1,7 +1,7 @@
 {
   "name": "paradox-codelab-javascript-hub",
   "version": "1.0.0",
-  "description": "Paradox CodeLab — Curated engineering showcase of 18 modular mini-applications and 3 personal portfolios built with pure Vanilla JavaScript (ES6+), semantic HTML5, and modern CSS by Abolfazl Mohammadshahi (Paradox).",
+  "description": "Paradox CodeLab — Curated engineering showcase of 28 modular mini-applications and 3 personal portfolios built with pure Vanilla JavaScript (ES6+), semantic HTML5, and modern CSS by Abolfazl Mohammadshahi (Paradox).",
   "main": "index.html",
   "scripts": {
     "start": "npx serve .",
