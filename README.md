@@ -112,10 +112,16 @@ JavaScript Mini Projects Hub/
     ├── 07-auth-portal/            # AuthCraft 3-in-1 Authentication Portal
     ├── 08-social-network/         # SocialSphere Feed & Stories
     ├── 09-travel-explorer/        # Wanderlust Travel Expeditions
-    ├── 10-portfolio-classic/      # Paradox Noir Dark Portfolio
-    ├── 11-portfolio-modern/       # Paradox Minimalist Dev Portfolio
-    ├── 12-portfolio-stellar/      # Paradox Stellar Executive Portfolio
-    └── template/                  # Standard Scaffolding for new projects (#13+)
+├── 10-portfolio-classic/      # Paradox Noir Dark Portfolio
+├── 11-portfolio-modern/       # Paradox Minimalist Dev Portfolio
+├── 12-portfolio-stellar/      # Paradox Stellar Executive Portfolio
+├── 13-taskflow-crud/          # TaskFlow Persistent CRUD Organizer
+├── 14-beatpulse-synth/        # BeatPulse Web Audio Drum Machine & Sequencer
+├── 15-markdown-studio/        # Markdown Live Split-Pane Editor
+├── 16-cryptopulse/            # CryptoPulse Real-Time Market Ticker
+├── 17-kanbanflow/             # KanbanFlow Drag & Drop Agile Board
+├── 18-devtyping-test/         # DevTyping Code Speed Benchmark
+└── template/                  # Standard Scaffolding for new projects (#19+)
 ```
 
 ---

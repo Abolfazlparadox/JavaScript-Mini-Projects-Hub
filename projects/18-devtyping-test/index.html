@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevTyping Benchmark | Code Typing Speed & Accuracy Test</title>
+    <meta
+      name="description"
+      content="Developer typing benchmark with real code snippets — live WPM, accuracy, error heatmap, performance chart and personal best history."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="dt-header">
+      <div class="header-left">
+        <a href="../../index.html" class="nav-hub-btn" title="Return to Projects Hub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Hub</span>
+        </a>
+        <div class="brand">
+          <span class="brand-badge">#18</span>
+          <span class="brand-title">DevTyping Benchmark</span>
+        </div>
+      </div>
+      <div class="header-right">
+        <select id="langSelect" class="field field-sm" title="Snippet language">
+          <option value="javascript">🟨 JavaScript</option>
+          <option value="python">🐍 Python</option>
+          <option value="css">🎨 CSS</option>
+        </select>
+        <select id="timeSelect" class="field field-sm" title="Test duration">
+          <option value="15">15s</option>
+          <option value="30" selected>30s</option>
+          <option value="60">60s</option>
+        </select>
+        <button class="icon-btn" id="btnHistory" title="Personal bests & history (H)">🏆</button>
+        <button class="icon-btn" id="btnSound" title="Toggle sound">
+          <span id="soundOn">🔊</span><span id="soundOff" class="hidden">🔇</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="dt-stage">
+      <div class="dt-shell">
+        <!-- Live stats -->
+        <section class="glass-card livebar" aria-label="Live statistics">
+          <div class="live-item timer"><span class="live-num" id="liveTime">30</span><span class="live-label">seconds</span></div>
+          <div class="live-item"><span class="live-num" id="liveWpm">0</span><span class="live-label">WPM</span></div>
+          <div class="live-item"><span class="live-num" id="liveCpm">0</span><span class="live-label">CPM</span></div>
+          <div class="live-item"><span class="live-num" id="liveAcc">100%</span><span class="live-label">accuracy</span></div>
+          <div class="live-item"><span class="live-num" id="liveErr">0</span><span class="live-label">errors</span></div>
+          <div class="live-progress"><div class="live-progress-fill" id="timeFill"></div></div>
+        </section>
+
+        <!-- Code card -->
+        <section class="glass-card code-card" aria-label="Typing area">
+          <div class="code-head">
+            <span class="code-file" id="snippetName">snippet.js</span>
+            <span class="best-line">Best: <strong id="bestLine">—</strong></span>
+          </div>
+          <div class="code-wrap" id="codeWrap">
+            <pre class="code-display" id="codeDisplay" aria-hidden="true"></pre>
+            <textarea id="hiddenInput" class="hidden-input" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Typing input"></textarea>
+            <div class="focus-overlay" id="focusOverlay">👆 Click here & start typing</div>
+          </div>
+          <div class="code-actions">
+            <button class="btn-ghost" id="btnNew" title="New snippet (Tab)">🎲 New snippet</button>
+            <button class="btn-primary" id="btnRestart" title="Restart (Esc)">↻ Restart</button>
+          </div>
+        </section>
+
+        <!-- Keyboard heat strip -->
+        <section class="glass-card heat-card" aria-label="Error heatmap">
+          <h2>🔥 Error Heatmap <span class="sub">most mistyped characters this session</span></h2>
+          <div class="heat-row" id="heatRow"><span class="heat-empty">No errors yet — keep it clean! ✨</span></div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Results modal -->
+    <div class="modal-overlay hidden" id="resultsModal">
+      <div class="modal-window glass-card wide" role="dialog" aria-modal="true" aria-label="Test results">
+        <div class="modal-header">
+          <h3>🏁 Test Complete</h3>
+          <button class="btn-close" id="btnCloseResults">✕</button>
+        </div>
+        <div class="grade-row">
+          <div class="grade-badge" id="gradeBadge">A</div>
+          <div class="grade-main">
+            <span class="grade-wpm"><strong id="resWpm">0</strong> WPM</span>
+            <span class="grade-sub" id="resSubtitle">JavaScript • 30s</span>
+          </div>
+          <div class="newbest hidden" id="newBest">🎉 New best!</div>
+        </div>
+        <div class="res-grid">
+          <div class="res-cell"><span>Accuracy</span><strong id="resAcc">0%</strong></div>
+          <div class="res-cell"><span>Consistency</span><strong id="resCons">0%</strong></div>
+          <div class="res-cell"><span>Characters</span><strong id="resChars">0</strong></div>
+          <div class="res-cell"><span>Errors</span><strong id="resErr">0</strong></div>
+        </div>
+        <div class="chart-wrap"><canvas id="perfChart"></canvas></div>
+        <div class="modal-footer">
+          <button class="btn-ghost" id="btnRetry">↻ Retry</button>
+          <button class="btn-ghost" id="btnNextSnip">🎲 New snippet</button>
+          <button class="btn-primary" id="btnKeepTyping">Keep practicing</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- History modal -->
+    <div class="modal-overlay hidden" id="historyModal">
+      <div class="modal-window glass-card" role="dialog" aria-modal="true" aria-label="History">
+        <div class="modal-header">
+          <h3>🏆 Personal Bests & History</h3>
+          <button class="btn-close" id="btnCloseHistory">✕</button>
+        </div>
+        <div class="best-grid" id="bestGrid"></div>
+        <h4 class="hist-title">Recent tests</h4>
+        <div class="hist-list" id="histList"></div>
+        <div class="modal-footer end">
+          <button class="btn-ghost danger" id="btnClearHist">Clear history</button>
+          <button class="btn-primary" id="btnDoneHist">Done</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
